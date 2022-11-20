@@ -1,6 +1,8 @@
 <?php
 
 class Data {
+    public $serverName;
+    public $connectionInfo;
     
     function Conexion(){
         $serverName = "DESKTOP-JP735J3"; //serverName\instanceName
@@ -9,7 +11,7 @@ class Data {
         $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
     if( $conn ) {
-        echo "Se conecto correctamente a la base de datos";
+     //   echo "Se conecto correctamente a la base de datos";
     }else{
         echo "No se conecto correctamente a la base de datos";
         die( print_r( sqlsrv_errors(), true));
