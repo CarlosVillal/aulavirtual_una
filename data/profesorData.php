@@ -34,17 +34,13 @@ class ProfesorData extends Data {
     }
 
 
-
-
-    public function deleteprofesor($idcita){
-        $conn = mysqli_connect($this->server, $this->user, $this->password, $this->db);
-        $conn->set_charset('utf8');
-
-        $queryUpdate = "DELETE from tbcita where tbcitaid=" . $idcita . ";";
-        $result = mysqli_query($conn, $queryUpdate);
-        mysqli_close($conn);
-
-        return $result;
+    public function deleteprofesor($pro_Cedula){
+        $conexion = new PDO("sqlsrv:server=DESKTOP-K0GAFL0;database=DB_AulaVirtual_UNA");
+        $pro_Cedula = $profesor->getpro_Cedula();
+        $sql = $conexion->prepare("EXEC sp_eliminar_Profesor ?");
+        $sql->bindParam(1,$pro_Cedula , PDO::PARAM_STR);
+        $resultado= $sql->execute();
+        return $resultado;
 
     }
 
@@ -64,20 +60,13 @@ class ProfesorData extends Data {
     //     return $result;
     // }
 
-    // public function getprofesor(){
-    //     $conn = mysqli_connect($this->server, $this->user, $this->password, $this->db);
-    //     $conn->set_charset('utf8');
-
-    //     $querySelect = "SELECT * FROM tbcita ;";
-    //     $result = mysqli_query($conn, $querySelect);
-    //     mysqli_close($conn);
-    //     $citas = [];
-    //     while ($row = mysqli_fetch_array($result)) {
-    //         $currentCita = new Cita($row['tbcitaid'], $row['tbprofesionalmedicoid'], $row['tbclienteid'], $row['tbcitahorainicio'],$row['tbcitahorafinal'],$row['tbcitadia']);
-    //         array_push($citas, $currentCita);
-    //     }
-    //     return $citas;
-    // }
+    public function getprofesor(){
+        $conexion = new PDO("sqlsrv:server=DESKTOP-K0GAFL0;database=DB_AulaVirtual_UNA");
+        $sql = $conexion->prepare("EXEC sp_ver_profesores");
+        $sql->execute();
+        $resultado= $sql->fetchAll(PDO::FETCH_ASSOC);
+        var_dump($resultado);
+     }
 
    
 

@@ -30,15 +30,12 @@ class EstudianteData extends Data {
         }
 
 
-    public function deleteCliente($idcliente){
-        $conn = mysqli_connect($this->server, $this->user, $this->password, $this->db);
-        $conn->set_charset('utf8');
-
-        $queryUpdate = "DELETE from tbcliente where tbclienteid=" . $idcliente . ";";
-        $result = mysqli_query($conn, $queryUpdate);
-        mysqli_close($conn);
-
-        return $result;
+     public function deleteEstudiante($est_Cedula){
+        $conexion = new PDO("sqlsrv:server=DESKTOP-K0GAFL0;database=DB_AulaVirtual_UNA");
+        $sql = $conexion->prepare("EXEC sp_eliminar_Profesor ?");
+        $sql->bindParam(1,$est_Cedula , PDO::PARAM_STR);
+        $resultado= $sql->execute();
+        return $resultado;
 
     }
 
@@ -56,36 +53,14 @@ class EstudianteData extends Data {
         return $result;
     }
 
-    public function getClientes(){
-        $conn = mysqli_connect($this->server, $this->user, $this->password, $this->db);
-        $conn->set_charset('utf8');
+    public function getEstudiantes(){
+        $conexion = new PDO("sqlsrv:server=DESKTOP-K0GAFL0;database=DB_AulaVirtual_UNA");
+        $sql = $conexion->prepare("EXEC sp_ver_estudiantes");
+        $sql->execute();
+        $resultado= $sql->fetchAll(PDO::FETCH_ASSOC);
+        var_dump($resultado);
+     }
 
-        $querySelect = "SELECT * FROM tbcliente;";
-        $result = mysqli_query($conn, $querySelect);
-        mysqli_close($conn);
-        $clientes = [];
-        while ($row = mysqli_fetch_array($result)) {
-            $currentCliente = new Cliente($row['tbclienteid'], $row['tbclientenombre'], $row['tbclienteapellido1'], $row['tbclienteapellido2']);
-            array_push($clientes, $currentCliente);
-        }
-        return $clientes;
-    }
-
-    public function searchCliente($palabra){
-        $conn = mysqli_connect($this->server, $this->user, $this->password, $this->db);
-        $conn->set_charset('utf8');
-
-        $querySelect = "SELECT * FROM tbcliente WHERE tbclientenombre LIKE '%".$palabra."%' OR tbclienteapellido1 LIKE '%".$palabra."%' OR tbclienteapellido2 LIKE '%".$palabra."%'";
-        $result = mysqli_query($conn, $querySelect);
-        mysqli_close($conn);
-        $clientes = [];
-        while ($row = mysqli_fetch_array($result)) {
-            $currentCliente = new Cliente($row['tbclienteid'], $row['tbclientenombre'], $row['tbclienteapellido1'], $row['tbclienteapellido2']);
-            array_push($clientes, $currentCliente);
-        }
-        return $clientes;
-
-    }
 
    
 

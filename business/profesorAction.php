@@ -33,8 +33,8 @@ if(isset($_POST['Eliminar'])){
     if (isset($_POST['pro_Cedula'])){
         $id=$_POST['pro_Cedula'];
 
-        $cursoBusiness = new CursoBusiness();
-        $result = $cursoBusiness->delete($id);
+        $profesorBusiness = new ProfesorBusiness();
+        $result = $profesorBusiness->delete($id);
         
     if($result == 1){           
         header("Location: ../view/vistaProfesor.php?success=deleted");

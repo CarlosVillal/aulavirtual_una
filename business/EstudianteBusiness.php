@@ -22,7 +22,7 @@ class EstudianteBusiness{
    //     return $this->estudianteData->deleteCarrera($id);
     //}
 
-   // public function obtener() {
-     //   return $this->estudianteData->getCarreras();
-   // }
+    public function obtener() {
+   return $this->estudianteData->getEstudiantes();
+   }
 }

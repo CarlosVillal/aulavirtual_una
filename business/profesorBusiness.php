@@ -17,13 +17,13 @@ class ProfesorBusiness{
     //     return $this->profesorData->updateprofesor($profesor);
     // }
 
-    // public function delete($id) {
-    //     return $this->profesorData->deleteprofesor($id);
-    // }
+     public function delete($id) {
+        return $this->profesorData->deleteprofesor($id);
+     }
 
-    // public function obtener() {
-    //     return $this->profesorData->getprofesor();
-    // }
+     public function obtener() {
+      return $this->profesorData->getprofesor();
+    }
     
     
 }
