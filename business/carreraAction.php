@@ -2,8 +2,7 @@
 include 'carreraBusiness.php';
 
 
-if(isset($_POST['Insertar'])){
-    
+if(isset($_POST['Insertar'])){ 
  $car_Id = $_POST['car_Id'];
  $car_Nombre = $_POST['car_Nombre'];
  

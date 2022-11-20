@@ -16,7 +16,7 @@ class CarreraData extends Data {
         $sql->bindParam(2,$car_Nombre , PDO::PARAM_STR);
         $resultado= $sql->execute();
         return $resultado;
-    
+        
         }
 
 
