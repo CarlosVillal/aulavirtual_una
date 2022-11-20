@@ -16,11 +16,7 @@
 <form onsubmit="return(validar());" method="POST"  id="estudianteForm" action="../business/EstudianteAction.php">  
                           <div class="table-responsive">  
                                <table class="table table-bordered">       
-                    
-
-
-
-                                
+                      
 
                                 <td><label>Cédula: </label>
                                   <input type="text" id="est_Cedula" name="est_Cedula" required></td>
@@ -38,7 +34,7 @@
                                   <input type="text" id="est_direccion" name="est_direccion" required></td>
                                   
                                   <td><p>Tipo de beca: <select id="est_TipoBeca" name="est_TipoBeca" required >
-                                <option value="‘No aplica">‘No aplica</option>    
+                                <option value="No aplica">‘No aplica</option>    
                                 <option value="Luis Felipe">Luis Felipe</option>    
                                 <option value="Omar Dengo">Omar Dengo</option>    
                                

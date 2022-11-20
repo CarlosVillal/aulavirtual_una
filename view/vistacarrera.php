@@ -8,20 +8,20 @@
 <head>
 
     <title>Carreras</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 <body>
 
-
-
-<form onsubmit="return(validar());" method="POST"  id="carreraForm" action="../business/carreraAction.php">  
+<form method="POST"  id="carreraForm" action="../business/carreraAction.php">  
                           <div class="table-responsive">  
                                <table class="table table-bordered">       
                     
-
-
+                               <td><label>ID de carrera: </label>
+                                  <input type="number" name="car_Id" required></td>
 
                                   <td><label>Nombre de carrera: </label>
-                                  <input type="text" id="est_Nombre" name="est_Nombre" required></td>
+                                  <input type="text" name="car_Nombre"></td>
 
                       <td><input onclick="return confirm('Seguro que desea almacenar los datos?')" type="submit" value="Registrar" name="Insertar" id="Insertar"/> </td>
                         </table>      
@@ -32,6 +32,7 @@
 <table class="table table-striped table-bordered" >
                   <thead>
                     <tr>
+                    <th>ID de carrera</th>  
                       <th>Nombre de carrera</th>  
                                                        
                     </tr>

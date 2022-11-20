@@ -11,7 +11,6 @@ class Carrera{
         $this->car_Id = $car_Id;
         $this->car_Nombre = $car_Nombre;
      
-
     }
 
     function getcar_Id(){

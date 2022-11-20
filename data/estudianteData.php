@@ -7,7 +7,7 @@ class EstudianteData extends Data {
 
 
     public function insertEstudiante($Estudiante){
-        $conexion = new PDO("sqlsrv:server=DESKTOP-JP735J3;database=DB_AulaVirtual_UNA");
+        $conexion = new PDO("sqlsrv:server=DESKTOP-K0GAFL0;database=DB_AulaVirtual_UNA");
     
         $est_Cedula = $Estudiante->getest_Cedula();
         $est_Nombre = $Estudiante->getest_Nombre();

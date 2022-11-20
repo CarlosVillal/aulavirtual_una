@@ -5,9 +5,8 @@ include '../domain/carrera.php';
 
 class CarreraData extends Data {
 
-
     public function insertCarrera($Carrera){
-        $conexion = new PDO("sqlsrv:server=DESKTOP-JP735J3;database=DB_AulaVirtual_UNA");
+        $conexion = new PDO("sqlsrv:server=DESKTOP-K0GAFL0;database=DB_AulaVirtual_UNA");
     
         $car_Id = $Carrera->getcar_Id();
         $car_Nombre = $Carrera->getcar_Nombre();
@@ -15,7 +14,6 @@ class CarreraData extends Data {
         $sql = $conexion->prepare("EXEC sp_insertar_carrera ?, ?");
         $sql->bindParam(1,$car_Id , PDO::PARAM_INT);
         $sql->bindParam(2,$car_Nombre , PDO::PARAM_STR);
-      
         $resultado= $sql->execute();
         return $resultado;
     

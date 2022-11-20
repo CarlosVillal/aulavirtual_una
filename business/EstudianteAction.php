@@ -4,21 +4,18 @@
 include 'EstudianteBusiness.php';
 
 
-if(isset($_POST['Insertar'])){
-    if (isset($_POST['est_Cedula']) && isset($_POST['est_Nombre']) && isset($_POST['est_Apellido1'])
-    && isset($_POST['est_Apellido2'])&& isset($_POST['est_direccion'])&& isset($_POST['est_TipoBeca'])
-) {
+if(isset($_POST['Insertar'])){ 
  $est_Cedula = $_POST['est_Cedula'];
  $est_Nombre = $_POST['est_Nombre'];
- $apellido1 = $_POST['est_Apellido1'];
- $apellido2 = $_POST['est_Apellido2'];
+ $est_Apellido1 = $_POST['est_Apellido1'];
+ $est_Apellido2 = $_POST['est_Apellido2'];
  $est_direccion = $_POST['est_direccion'];
  $est_TipoBeca = $_POST['est_TipoBeca'];
  
- $estudiante = new Estudiante($est_Cedula,$est_Nombre, $est_Apellido1, $est_Apellido2,$est_direccion,$est_TipoBeca);
+ $estudiantes = new Estudiante($est_Cedula, $est_Nombre, $est_Apellido1, $est_Apellido2, $est_direccion, $est_TipoBeca);
  
  $estudianteBusiness = new EstudianteBusiness();
- $resultado = $estudianteBusiness->insertar($estudiante);
+ $resultado = $estudianteBusiness->insertar($estudiantes);
  
     if($resultado == 1){
          Header("Location: ../views/vistaestudiante.php?success=inserted");
@@ -29,8 +26,6 @@ if(isset($_POST['Insertar'])){
 
     }
 
-
-}
 
 
 if(isset($_POST['Eliminar'])){

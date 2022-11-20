@@ -5,7 +5,7 @@ class Data {
     public $connectionInfo;
     
     function Conexion(){
-        $serverName = "DESKTOP-JP735J3"; //serverName\instanceName
+        $serverName = "DESKTOP-K0GAFL0"; //serverName\instanceName
 
         $connectionInfo = array( "Database"=>"DB_AulaVirtual_UNA");
         $conn = sqlsrv_connect( $serverName, $connectionInfo);

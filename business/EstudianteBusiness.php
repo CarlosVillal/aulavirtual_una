@@ -11,7 +11,7 @@ class EstudianteBusiness{
     }
 
     public function insertar($Estudiante) {
-        return $this->estudianteData->insertCarrera($Estudiante);
+        return $this->estudianteData->insertEstudiante($Estudiante);
     }
 
    // public function update($Estudiante) {
@@ -22,7 +22,7 @@ class EstudianteBusiness{
    //     return $this->estudianteData->deleteCarrera($id);
     //}
 
-    public function obtener() {
-        return $this->estudianteData->getCarreras();
-    }
+   // public function obtener() {
+     //   return $this->estudianteData->getCarreras();
+   // }
 }

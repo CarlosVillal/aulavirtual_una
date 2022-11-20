@@ -1,14 +1,12 @@
 <?php
-
-include 'CarreraBusiness.php';
+include 'carreraBusiness.php';
 
 
 if(isset($_POST['Insertar'])){
-    if (isset($_POST['car_Nombre'])) {
-
+ $car_Id = $_POST['car_Id'];
  $car_Nombre = $_POST['car_Nombre'];
  
- $carrera = new Carrera(0,$car_Nombre);
+ $carrera = new Carrera($car_Id,$car_Nombre);
  
  $carreraBusiness = new CarreraBusiness();
  $resultado = $carreraBusiness->insertar($carrera);
@@ -23,7 +21,7 @@ if(isset($_POST['Insertar'])){
     }
 
 
-}
+
 
 
 if(isset($_POST['Eliminar'])){

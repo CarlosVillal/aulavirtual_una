@@ -1,6 +1,6 @@
 <?php
 
-include '../data/CarreraData.php';
+include '../data/carreraData.php';
 
 class CarreraBusiness{
 
@@ -22,9 +22,9 @@ class CarreraBusiness{
       //  return $this->carreraData->deleteCarrera($id);
     //}
 
-    public function obtener() {
-        return $this->carreraData->getCarreras();
-    }
+   // public function obtener() {
+     //   return $this->carreraData->getCarreras();
+    //}
 
   
     
