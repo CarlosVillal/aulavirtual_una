@@ -1,29 +1,39 @@
 <?php
 
 include_once 'data.php';
-include '../domain/profesor.php';
+include '../domain/curso.php';
 
 class CursoData extends Data {
 
 
-    public function insertprofesor($profesor){
-        $conn = mysqli_connect($this->server, $this->user, $this->password, $this->db);
-        $conn->set_charset('utf8');
+    public function insertcurso($curso){
+        $conexion = new PDO("sqlsrv:server=DESKTOP-K0GAFL0;database=DB_AulaVirtual_UNA");
+    
+        $cur_Sigla = $profesor->getcur_Sigla();
+        $cur_Nombre = $profesor->getcur_Nombre();
+        $cur_CantidadCupos = $profesor->getcur_CantidadCupos();
+        $cur_Vigencia = $profesor->getcur_Vigencia();
+        $car_Id = $profesor->getcar_Id();
+        $pro_Cedula = $profesor->getpro_Cedula();
+        
+    
+       
+        $sql = $conexion->prepare("EXEC sp_insertar_Curso ?, ?, ?, ?, ?, ?");
+        $sql->bindParam(1,$cur_Sigla , PDO::PARAM_STR);
+        $sql->bindParam(2,$cur_Nombre , PDO::PARAM_STR);
+        $sql->bindParam(3,$cur_CantidadCupos , PDO::PARAM_INT);
+        $sql->bindParam(4,$cur_Vigencia , PDO::PARAM_STR);
+        $sql->bindParam(5,$car_Id , PDO::PARAM_INT);
+        $sql->bindParam(6,$pro_Cedula , PDO::PARAM_STR);
+      
+        $resultado= $sql->execute();
+        return $resultado;
+    
+        }
 
-        $queryInsert = "EXEC sp_insertar_Profesor ('" .
-                $profesor->getpro_Cedula() . "','" .
-                $profesor->getpro_Nombre() . "','" .
-                $profesor->getpro_Apellido1() . "','" .
-                $profesor->getpro_Apellido2() . "','" .
-                $profesor->getpro_FechaNacimiento() . "','" .
-                $profesor->getpro_Sexo() . "','" .
-                $profesor->getpro_GradoAcademico() . "','" .
-                $profesor->getpro_AniosExperiencia() . "');";
 
-        $result = mysqli_query($conn, $queryInsert);
-        mysqli_close($conn);
-        return $result;
-    }
+
+
 
     public function deleteprofesor($idcita){
         $conn = mysqli_connect($this->server, $this->user, $this->password, $this->db);

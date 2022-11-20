@@ -10,7 +10,9 @@
 <body>
     
     <button><a href="view/vistaCurso.php">Cursos</a></button><br><br>
-    <button><a href="view/vistaProfesor.php">Profesor</a></button><br><br>
+    <button><a href="view/vistaProfesor.php">Profesores</a></button><br><br>
+    <button><a href="view/vistacarrera.php">Carreras</a></button><br><br>
+    <button><a href="view/vistaestudiante.php">Estudiantes</a></button><br><br>
 
 </body>
 </html>
