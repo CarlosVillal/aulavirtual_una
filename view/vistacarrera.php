@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <head>
 
-    <title>Carrera</title>
+    <title>Carreras</title>
 </head>
 <body>
 
