@@ -1,5 +1,7 @@
 <?php 
   include '../business/EstudianteBusiness.php'; 
+  include_once '../data/data.php';
+  Data::Conexion();
 ?>
 
 <!DOCTYPE html>
@@ -62,21 +64,21 @@
                   </thead>
                   <tbody>
                   <?php
-                   $estudianteBusiness = new EstudianteBusiness();
-                   $estudiantes = $estudianteBusiness->obtener();
-                   foreach ($estudiantes as $row) {
+              //     $estudianteBusiness = new EstudianteBusiness();
+                //   $estudiantes = $estudianteBusiness->obtener();
+                 //  foreach ($estudiantes as $row) {
 
                  
-                    echo '<form  method="post" enctype="multipart/form-data" action="../business/EstudianteAction.php">';
-                    echo '<input type="hidden" name="est_Cedula" value="'. $row->getest_Cedula().'">';
-                            echo '<tr>';
+                   // echo '<form  method="post" enctype="multipart/form-data" action="../business/EstudianteAction.php">';
+                   // echo '<input type="hidden" name="est_Cedula" value="'. $row->getest_Cedula().'">';
+                     //       echo '<tr>';
                           
-                            echo '<td><input type="text" id="est_Cedula" name="est_Cedula"  value="'. $row->getest_Cedula(). '"/></td>';
-                            echo '<td><input type="text" id="est_Nombre" name="est_Nombre"  value="'. $row->getest_Nombre(). '"/></td>';
-                            echo '<td><input type="text" id="est_Apellido1" name="est_Apellido1" value="'. $row->getest_Apellido1(). '"/></td>';
-                            echo '<td><input type="time" name="est_Apellido2" id="est_Apellido2" value="'. $row->getest_Apellido2(). '"/></td>';
-                            echo '<td><input type="time" name="est_direccion" id="est_direccion" value="'. $row->getest_direccion(). '"/></td>';           
-                             echo '<td><input type="text" name="est_TipoBeca" id="est_TipoBeca" value="'. $row->getest_TipoBeca(). '"/></td>';                                 
+                       //     echo '<td><input type="text" id="est_Cedula" name="est_Cedula"  value="'. $row->getest_Cedula(). '"/></td>';
+                         //   echo '<td><input type="text" id="est_Nombre" name="est_Nombre"  value="'. $row->getest_Nombre(). '"/></td>';
+                      //  echo '<td><input type="text" id="est_Apellido1" name="est_Apellido1" value="'. $row->getest_Apellido1(). '"/></td>';
+                     // echo '<td><input type="time" name="est_Apellido2" id="est_Apellido2" value="'. $row->getest_Apellido2(). '"/></td>';
+                    //   echo '<td><input type="time" name="est_direccion" id="est_direccion" value="'. $row->getest_direccion(). '"/></td>';           
+                  // echo '<td><input type="text" name="est_TipoBeca" id="est_TipoBeca" value="'. $row->getest_TipoBeca(). '"/></td>';                                 
 
                          ?> 
                             <td><input type="submit" value="Actualizar" name="Actualizar" id="update" onclick="return confirm('Seguro que desea guardar los cambios?')" /></td>
@@ -86,7 +88,7 @@
                             echo '</tr>';
                             echo '</form>';    
 
-                   }
+                 //  }
                                       
                    ?>
                    <tr>

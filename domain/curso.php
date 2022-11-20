@@ -23,7 +23,7 @@ class Curso{
     }
 
     function setcur_Sigla($cur_Sigla){
-        $this->cur_Sigla = $cur_Sigla
+        $this->cur_Sigla = $cur_Sigla;
     }
 
     function getcur_Nombre(){
@@ -31,7 +31,7 @@ class Curso{
     }
 
     function setcur_Nombre($cur_Nombre){
-        $this->cur_Nombre = $cur_Nombre
+        $this->cur_Nombre = $cur_Nombre;
     }
 
     function getcur_CantidadCupos(){
@@ -39,7 +39,7 @@ class Curso{
     }
 
     function setcur_CantidadCupos($cur_CantidadCupos){
-        $this->cur_CantidadCupos = $cur_CantidadCupos
+        $this->cur_CantidadCupos = $cur_CantidadCupos;
     }
 
     function getcur_Vigencia(){
@@ -47,7 +47,7 @@ class Curso{
     }
 
     function setcur_Vigencia($cur_Vigencia){
-        $this->cur_Vigencia = $cur_Vigencia
+        $this->cur_Vigencia = $cur_Vigencia;
     }
 
     function getcar_Id(){
@@ -55,7 +55,7 @@ class Curso{
     }
 
     function setcar_Id($car_Id){
-        $this->car_Id = $car_Id
+        $this->car_Id = $car_Id;
     }
 
     function getpro_Cedula(){
@@ -63,7 +63,7 @@ class Curso{
     }
 
     function setpro_Cedula($pro_Cedula){
-        $this->pro_Cedula = $pro_Cedula
+        $this->pro_Cedula = $pro_Cedula;
     }    
 
 

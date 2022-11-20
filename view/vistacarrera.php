@@ -1,47 +1,27 @@
 <?php 
-  include '../business/EstudianteBusiness.php'; 
+  include '../business/carreraBusiness.php'; 
+  include_once '../data/data.php';
+  Data::Conexion();
 ?>
 
 <!DOCTYPE html>
 <head>
 
-    <title>Estudiantes</title>
+    <title>Carrera</title>
 </head>
 <body>
 
 
 
-<form onsubmit="return(validar());" method="POST"  id="estudianteForm" action="../business/EstudianteAction.php">  
+<form onsubmit="return(validar());" method="POST"  id="carreraForm" action="../business/carreraAction.php">  
                           <div class="table-responsive">  
                                <table class="table table-bordered">       
                     
 
 
 
-                                
-
-                                <td><label>Cédula: </label>
-                                  <input type="text" id="est_Cedula" name="est_Cedula" required></td>
-                            
-                                  <td><label>Nombre: </label>
+                                  <td><label>Nombre de carrera: </label>
                                   <input type="text" id="est_Nombre" name="est_Nombre" required></td>
-
-                                  <td><label>Primer Apellido: </label>
-                                  <input type="text" id="est_Apellido1" name="est_Apellido1" required></td>
-                                  
-                                  <td><label>Sengundo Apellido: </label>
-                                  <input type="text" id="est_Apellido2" name="est_Apellido2" required></td>
-                                        
-                                  <td><label>Dirección: </label>
-                                  <input type="text" id="est_direccion" name="est_direccion" required></td>
-                                  
-                                  <td><p>Tipo de beca: <select id="est_TipoBeca" name="est_TipoBeca" required >
-                                <option value="‘No aplica">‘No aplica</option>    
-                                <option value="Luis Felipe">Luis Felipe</option>    
-                                <option value="Omar Dengo">Omar Dengo</option>    
-                               
-                                </select></td>
-
 
                       <td><input onclick="return confirm('Seguro que desea almacenar los datos?')" type="submit" value="Registrar" name="Insertar" id="Insertar"/> </td>
                         </table>      
@@ -52,31 +32,22 @@
 <table class="table table-striped table-bordered" >
                   <thead>
                     <tr>
-                      <th>Cédula</th>  
-                      <th>Nombre</th>  
-                      <th>Primer apellido</th>                   
-                      <th>Sengundo apellido</th> 
-                      <th>Dirección</th>    
-                      <th>Tipo de beca</th>                                    
+                      <th>Nombre de carrera</th>  
+                                                       
                     </tr>
                   </thead>
                   <tbody>
                   <?php
-                   $estudianteBusiness = new EstudianteBusiness();
-                   $estudiantes = $estudianteBusiness->obtener();
-                   foreach ($estudiantes as $row) {
+             //      $carreraBusiness = new CarreraBusiness();
+               //    $carreras = $carreraBusiness->obtener();
+                 //  foreach ($carreras as $row) {
 
                  
-                    echo '<form  method="post" enctype="multipart/form-data" action="../business/EstudianteAction.php">';
-                    echo '<input type="hidden" name="est_Cedula" value="'. $row->getest_Cedula().'">';
-                            echo '<tr>';
+                   // echo '<form  method="post" enctype="multipart/form-data" action="../business/carreraAction.php">';
+                   // echo '<input type="hidden" name="car_Id" value="'. $row->getcar_Id().'">';
+                     //       echo '<tr>';
                           
-                            echo '<td><input type="text" id="est_Cedula" name="est_Cedula"  value="'. $row->getest_Cedula(). '"/></td>';
-                            echo '<td><input type="text" id="est_Nombre" name="est_Nombre"  value="'. $row->getest_Nombre(). '"/></td>';
-                            echo '<td><input type="text" id="est_Apellido1" name="est_Apellido1" value="'. $row->getest_Apellido1(). '"/></td>';
-                            echo '<td><input type="time" name="est_Apellido2" id="est_Apellido2" value="'. $row->getest_Apellido2(). '"/></td>';
-                            echo '<td><input type="time" name="est_direccion" id="est_direccion" value="'. $row->getest_direccion(). '"/></td>';           
-                             echo '<td><input type="text" name="est_TipoBeca" id="est_TipoBeca" value="'. $row->getest_TipoBeca(). '"/></td>';                                 
+                       //     echo '<td><input type="text" id="car_Nombre" name="car_Nombre"  value="'. $row->getcar_Nombre(). '"/></td>';       
 
                          ?> 
                             <td><input type="submit" value="Actualizar" name="Actualizar" id="update" onclick="return confirm('Seguro que desea guardar los cambios?')" /></td>
@@ -86,7 +57,7 @@
                             echo '</tr>';
                             echo '</form>';    
 
-                   }
+                  // }
                                       
                    ?>
                    <tr>

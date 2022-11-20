@@ -14,13 +14,13 @@ class CarreraBusiness{
         return $this->carreraData->insertCarrera($Carrera);
     }
 
-    public function update($Carrera) {
-        return $this->carreraData->updateCarrera($Carrera);
-    }
+ //   public function update($Carrera) {
+   //     return $this->carreraData->updateCarrera($Carrera);
+   // }
 
-    public function delete($id) {
-        return $this->carreraData->deleteCarrera($id);
-    }
+    //public function delete($id) {
+      //  return $this->carreraData->deleteCarrera($id);
+    //}
 
     public function obtener() {
         return $this->carreraData->getCarreras();

@@ -14,13 +14,13 @@ class EstudianteBusiness{
         return $this->estudianteData->insertCarrera($Estudiante);
     }
 
-    public function update($Estudiante) {
-        return $this->estudianteData->updateCarrera($Estudiante);
-    }
+   // public function update($Estudiante) {
+     //   return $this->estudianteData->updateCarrera($Estudiante);
+    //}
 
-    public function delete($id) {
-        return $this->estudianteData->deleteCarrera($id);
-    }
+ //   public function delete($id) {
+   //     return $this->estudianteData->deleteCarrera($id);
+    //}
 
     public function obtener() {
         return $this->estudianteData->getCarreras();

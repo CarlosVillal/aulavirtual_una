@@ -13,17 +13,6 @@ class CursoBusiness{
         return $this->cursoData->insertcurso($curso);
     }
 
-    public function update($curso) {
-        return $this->cursoData->updatecurso($curso);
-    }
-
-    public function delete($id) {
-        return $this->cursoData->deletecurso($id);
-    }
-
-    public function obtener() {
-        return $this->cursoData->getcursos();
-    }
     
     
 }
