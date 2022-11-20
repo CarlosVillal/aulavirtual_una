@@ -3,11 +3,11 @@
 include_once 'data.php';
 include '../domain/carrera.php';
 
-class EstudianteData extends Data {
+class CarreraData extends Data {
 
 
     public function insertCarrera($Carrera){
-        $conexion = new PDO("sqlsrv:server=DESKTOP-K0GAFL0;database=DB_AulaVirtual_UNA");
+        $conexion = new PDO("sqlsrv:server=DESKTOP-JP735J3;database=DB_AulaVirtual_UNA");
     
         $car_Id = $Carrera->getcar_Id();
         $car_Nombre = $Carrera->getcar_Nombre();

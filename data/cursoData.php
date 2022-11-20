@@ -7,7 +7,7 @@ class CursoData extends Data {
 
 
     public function insertcurso($curso){
-        $conexion = new PDO("sqlsrv:server=DESKTOP-K0GAFL0;database=DB_AulaVirtual_UNA");
+        $conexion = new PDO("sqlsrv:server=DESKTOP-JP735J3;database=DB_AulaVirtual_UNA");
     
         $cur_Sigla = $profesor->getcur_Sigla();
         $cur_Nombre = $profesor->getcur_Nombre();

@@ -7,7 +7,7 @@ class ProfesorData extends Data {
 
 
     public function insertprofesor($profesor){
-        $conexion = new PDO("sqlsrv:server=DESKTOP-K0GAFL0;database=DB_AulaVirtual_UNA");
+        $conexion = new PDO("sqlsrv:server=DESKTOP-JP735J3;database=DB_AulaVirtual_UNA");
 
     $pro_Cedula = $profesor->getpro_Cedula();
     $pro_Nombre = $profesor->getpro_Nombre();
