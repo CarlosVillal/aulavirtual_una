@@ -17,9 +17,9 @@ if(isset($_POST['Insertar'])){
  $resultado = $cursoBusiness->insertar($curso);
  
     if($resultado == 1){
-         Header("Location: ../views/vistaCurso.php?success=inserted");
+         Header("Location: ../view/vistaCurso.php?success=inserted");
      }else{
-         Header("Location: ../views/vistaCurso.php?error=dbError");
+         Header("Location: ../view/vistaCurso.php?error=dbError");
      }
 }
 

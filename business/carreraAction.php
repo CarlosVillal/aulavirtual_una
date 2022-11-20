@@ -3,25 +3,23 @@ include 'carreraBusiness.php';
 
 
 if(isset($_POST['Insertar'])){
+    
  $car_Id = $_POST['car_Id'];
  $car_Nombre = $_POST['car_Nombre'];
  
- $carrera = new Carrera($car_Id,$car_Nombre);
+ $carrera = new Carrera($car_Id, $car_Nombre);
  
  $carreraBusiness = new CarreraBusiness();
  $resultado = $carreraBusiness->insertar($carrera);
  
     if($resultado == 1){
-         Header("Location: ../views/vistacarrera.php?success=inserted");
+         Header("Location: ../view/vistacarrera.php?success=inserted");
      }else{
-         Header("Location: ../views/vistacarrera.php?error=dbError");
+         Header("Location: ../view/vistacarrera.php?error=dbError");
      }
 
 
     }
-
-
-
 
 
 if(isset($_POST['Eliminar'])){

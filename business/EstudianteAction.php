@@ -18,9 +18,9 @@ if(isset($_POST['Insertar'])){
  $resultado = $estudianteBusiness->insertar($estudiantes);
  
     if($resultado == 1){
-         Header("Location: ../views/vistaestudiante.php?success=inserted");
+         Header("Location: ../view/vistaestudiante.php?success=inserted");
      }else{
-         Header("Location: ../views/vistaestudiante.php?error=dbError");
+         Header("Location: ../view/vistaestudiante.php?error=dbError");
      }
 
 
