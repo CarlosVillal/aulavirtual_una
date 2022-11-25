@@ -50,18 +50,17 @@
     <?php
     $profesorBusiness = new ProfesorBusiness();
     $profesor = $profesorBusiness -> obtener();
-foreach ($profesor as $row) {
+    foreach ($profesor as $row) {
         echo '<form  method="post" enctype="multipart/form-data" action="../business/profesorAction.php">';
-        
         echo '<tr>';
-    echo '<td><input type="text" readonly name="pro_Cedula" value="'. $row->getpro_Cedula().'"/></td>';
-        echo '<td><input type="text" name="pro_Nombre" value="'. $row->getpro_Nombre().'"/></td>';
-        echo '<td><input type="text" name="pro_Apellido1" value="'. $row->getpro_Apellido1().'"/></td>';
-        echo '<td><input type="text" name="pro_Apellido2" value="'. $row->getpro_Apellido2().'"/></td>';
-        echo '<td><input type="text" name="pro_FechaNacimiento" value="'. $row->getpro_FechaNacimiento().'"/></td>';
-        echo '<td><input type="text" name="pro_Sexo" value="'. $row->getpro_Sexo().'"/></td>';
-        echo '<td><input type="text" name="pro_GradoAcademico" value="'. $row->getpro_GradoAcademico().'"/></td>';
-        echo '<td><input type="text" name="pro_AniosExperiencia" value="'. $row->getpro_AniosExperiencia().'"/></td>';
+        echo '<td><input type="text" readonly name="pro_Cedula" value="'. $row['pro_Cedula'] .'"/></td>';
+        echo '<td><input type="text" name="pro_Nombre" value="'. $row['pro_Nombre'] .'"/></td>';
+        echo '<td><input type="text" name="pro_Apellido1" value="'. $row['pro_Apellido1'] .'"/></td>';
+        echo '<td><input type="text" name="pro_Apellido2" value="'. $row['pro_Apellido2'] .'"/></td>';
+        echo '<td><input type="text" name="pro_FechaNacimiento" value="'. $row['pro_FechaNacimiento'] .'"/></td>';
+        echo '<td><input type="text" name="pro_Sexo" value="'. $row['pro_Sexo'] .'"/></td>';
+        echo '<td><input type="text" name="pro_GradoAcademico" value="'. $row['pro_GradoAcademico'] .'"/></td>';
+        echo '<td><input type="text" name="pro_AniosExperiencia" value="'. $row['pro_AniosExperiencia'] .'"/></td>';
     ?>   
         <td><input type="submit" value="Actualizar" name="Actualizar" id="Actualizar" onclick="return confirm('Seguro que desea guardar los cambios?')" /></td>
         <td><input type="submit" value="Eliminar" name="Eliminar" id="Eliminar" onclick="return confirm('Seguro que desea eliminar el registro?')" /></td>

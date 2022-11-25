@@ -13,9 +13,9 @@ class ProfesorBusiness{
         return $this->profesorData->insertprofesor($profesor);
     }
 
-    // public function update($profesor) {
-    //     return $this->profesorData->updateprofesor($profesor);
-    // }
+     public function update($profesor) {
+         return $this->profesorData->updateprofesor($profesor);
+     }
 
      public function delete($id) {
         return $this->profesorData->deleteprofesor($id);

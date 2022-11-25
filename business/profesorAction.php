@@ -31,7 +31,7 @@ if(isset($_POST['Insertar'])){
 if(isset($_POST['Eliminar'])){
 
     if (isset($_POST['pro_Cedula'])){
-        $id=$_POST['pro_Cedula'];
+        $id = $_POST['pro_Cedula'];
 
         $profesorBusiness = new ProfesorBusiness();
         $result = $profesorBusiness->delete($id);

@@ -1,3 +1,7 @@
+<?php
+// $hostName = gethostname();
+// Print "$hostName";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +12,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    
+
     <button><a href="view/vistaCurso.php">Cursos</a></button><br><br>
     <button><a href="view/vistaProfesor.php">Profesores</a></button><br><br>
     <button><a href="view/vistacarrera.php">Carreras</a></button><br><br>
