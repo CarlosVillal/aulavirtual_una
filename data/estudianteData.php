@@ -15,14 +15,18 @@ class EstudianteData extends Data {
         $est_Apellido2 = $Estudiante->getest_Apellido2();
         $est_direccion = $Estudiante->getest_direccion();
         $est_TipoBeca = $Estudiante->getest_TipoBeca();
+        $est_FechaNacimiento = $Estudiante->getest_FechaNacimiento();
+        $est_Carrera = $Estudiante->getest_Carrera();
        
-        $sql = $conexion->prepare("EXEC sp_insertar_estudiante ?, ?, ?, ?, ?, ?");
+        $sql = $conexion->prepare("EXEC sp_insertar_estudiante ?, ?, ?, ?, ?, ?, ?, ?");
         $sql->bindParam(1,$est_Cedula , PDO::PARAM_STR);
         $sql->bindParam(2,$est_Nombre , PDO::PARAM_STR);
         $sql->bindParam(3,$est_Apellido1 , PDO::PARAM_STR);
         $sql->bindParam(4,$est_Apellido2 , PDO::PARAM_STR);
         $sql->bindParam(5,$est_direccion , PDO::PARAM_STR);
         $sql->bindParam(6,$est_TipoBeca , PDO::PARAM_STR);
+        $sql->bindParam(7,$est_FechaNacimiento , PDO::PARAM_STR);
+        $sql->bindParam(8,$est_Carrera , PDO::PARAM_STR);
 
         $resultado= $sql->execute();
 
@@ -51,14 +55,18 @@ class EstudianteData extends Data {
         $est_Apellido2 = $Estudiante->getest_Apellido2();
         $est_direccion = $Estudiante->getest_direccion();
         $est_TipoBeca = $Estudiante->getest_TipoBeca();
+        $est_FechaNacimiento = $Estudiante->getest_FechaNacimiento();
+        $est_Carrera = $Estudiante->getest_Carrera();
        
-        $sql = $conexion->prepare("EXEC sp_actualizar_estudiante ?, ?, ?, ?, ?, ?");
+        $sql = $conexion->prepare("EXEC sp_actualizar_estudiante ?, ?, ?, ?, ?, ?, ?, ?");
         $sql->bindParam(1,$est_Cedula , PDO::PARAM_STR);
         $sql->bindParam(2,$est_Nombre , PDO::PARAM_STR);
         $sql->bindParam(3,$est_Apellido1 , PDO::PARAM_STR);
         $sql->bindParam(4,$est_Apellido2 , PDO::PARAM_STR);
         $sql->bindParam(5,$est_direccion , PDO::PARAM_STR);
         $sql->bindParam(6,$est_TipoBeca , PDO::PARAM_STR);
+        $sql->bindParam(7,$est_FechaNacimiento , PDO::PARAM_STR);
+        $sql->bindParam(8,$est_Carrera , PDO::PARAM_STR);
 
         $resultado= $sql->execute();
 

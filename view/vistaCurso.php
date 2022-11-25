@@ -2,6 +2,7 @@
   include '../business/cursoBusiness.php';
   include '../business/carreraBusiness.php';
   include '../business/profesorBusiness.php';
+  include '../business/matriculaBusiness.php';
 ?>
 
 <!DOCTYPE html>
@@ -13,17 +14,17 @@
 </head>
 <body>
 
-	 <form method="POST"  id="creditoForm" action="../business/cursoAction.php">  
+	 <form method="POST"  id="cursoForm" action="../business/cursoAction.php">  
     <div class="table-responsive">  
     <table class="table table-bordered"> 
 
     <td><label>Siglas: </label><input type="text" id="cur_Sigla" name="cur_Sigla" placeholder="Siglas" require></td>
     <td><label>Nombre de curso: </label><input type="text" id="cur_Nombre" name="cur_Nombre" placeholder="Nombre de curso" require></td>
     <td><label>Numero de cupos: </label><input type="number" id="cur_CantidadCupos" name="cur_CantidadCupos" placeholder="N° de cupos"  ></td>
-    <td><label>Vigencia: </label><select name="cur_Vigencia" id="cur_Vigencia">
+    <!-- <td><label>Vigencia: </label><select name="cur_Vigencia" id="cur_Vigencia">
         <option value="Activo">Activo</option>
         <option value="Finalizado">Finalizado</option>
-    </select></td>
+    </select></td> -->    
     <td><label>Carrera: </label><select name="car_Id" id="car_Id" required>
     <?php
     $carrerabusiness = new CarreraBusiness();
@@ -42,13 +43,17 @@
     }
     ?>
     </select></td>
+    <input type="hidden" name="cur_Vigencia" value="Activo" >
     <td><input type="submit" onclick="return confirm('Seguro que desea almacenar los datos?')" value="Insertar" id="Insertar" name="Insertar"/></td>
 
  
 </table>  
 </div>  
-</form>  
+</form> 
 <br><br>
+
+  
+
     <table class="table table-striped table-bordered" >
     <thead>
     <tr>
@@ -71,7 +76,12 @@
         echo '<td><input type="text" readonly name="cur_Sigla" value="'. $row['cur_Sigla'].'"/></td>';
         echo '<td><input type="text" name="cur_Nombre" value="'. $row['cur_Nombre'].'"/></td>';
         echo '<td><input type="text" name="cur_CantidadCupos" value="'. $row['cur_CantidadCupos'].'"/></td>';
-        echo '<td><input type="text" name="cur_Vigencia" value="'. $row['cur_Vigencia'].'"/></td>';
+       // echo '<td><input type="text" name="cur_Vigencia" value="'. $row['cur_Vigencia'].'"/></td>';
+        echo '<td><select name="cur_Vigencia" id="cur_Vigencia">
+        <option value="'. $row['cur_Vigencia'].'">'. $row['cur_Vigencia'].'</option>
+        <option value="Activo">Activo</option>
+        <option value="Finalizado">Finalizado</option>
+        </select></td>';
         echo '<td><input type="text" name="car_Id" value="'. $row['car_Id'].'"/></td>';
         echo '<td><input type="text" name="pro_Cedula" value="'. $row['pro_Cedula'].'"/></td>';
     ?>   

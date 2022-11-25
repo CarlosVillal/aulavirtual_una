@@ -17,13 +17,17 @@
     <div class="table-responsive">  
     <table class="table table-bordered"> 
 
-    <td><label>Cedula: </label><input type="text" name="pro_Cedula" placeholder="Siglas" require></td>
-    <td><label>Nombre: </label><input type="text" name="pro_Nombre"></td>
+    <td><label>Cedula: </label><input type="text" name="pro_Cedula" require ></td>
+    <td><label>Nombre: </label><input type="text" name="pro_Nombre" ></td>
     <td><label>Primer Apellido: </label><input type="text" name="pro_Apellido1"></td>
     <td><label>Segundo Apellido: </label><input type="text" name="pro_Apellido2" ></td>
     <td><label>Fecha de Nacimiento: </label><input type="date" name="pro_FechaNacimiento" ></td>
-    <td><label>Sexo: </label><input type="text" name="pro_Sexo"></td>
-    <td><label>Grado Academico: </label><input type="text" name="pro_GradoAcademico" ></td>
+    <td><label>Sexo: </label></td>
+    <td><input type="radio" id="sexo" name="pro_Sexo" value="Maculino"></td>
+    <td><label for="sexo">Masculino</label></td>
+    <td><input type="radio" id="sexo" name="pro_Sexo" value="Femenino"></td>
+    <td><label for="sexo">Femenino</label></td>
+    <td><label>Grado Academico: </label><input type="text" name="pro_GradoAcademico"></td>
     <td><label>Años de experiencia: </label><input type="number" name="pro_AniosExperiencia"></td>
     
     <td><input type="submit" onclick="return confirm('Seguro que desea almacenar los datos?')" value="Insertar" name="Insertar"/></td>
@@ -54,12 +58,12 @@
         echo '<form  method="post" enctype="multipart/form-data" action="../business/profesorAction.php">';
         echo '<tr>';
         echo '<td><input type="text" readonly name="pro_Cedula" value="'. $row['pro_Cedula'] .'"/></td>';
-        echo '<td><input type="text" name="pro_Nombre" value="'. $row['pro_Nombre'] .'"/></td>';
-        echo '<td><input type="text" name="pro_Apellido1" value="'. $row['pro_Apellido1'] .'"/></td>';
-        echo '<td><input type="text" name="pro_Apellido2" value="'. $row['pro_Apellido2'] .'"/></td>';
+        echo '<td><input type="text" readonly name="pro_Nombre" value="'. $row['pro_Nombre'] .'"/></td>';
+        echo '<td><input type="text" readonly name="pro_Apellido1" value="'. $row['pro_Apellido1'] .'"/></td>';
+        echo '<td><input type="text" readonly name="pro_Apellido2" value="'. $row['pro_Apellido2'] .'"/></td>';
         echo '<td><input type="text" name="pro_FechaNacimiento" value="'. $row['pro_FechaNacimiento'] .'"/></td>';
-        echo '<td><input type="text" name="pro_Sexo" value="'. $row['pro_Sexo'] .'"/></td>';
-        echo '<td><input type="text" name="pro_GradoAcademico" value="'. $row['pro_GradoAcademico'] .'"/></td>';
+        echo '<td><input type="text" readonly name="pro_Sexo" value="'. $row['pro_Sexo'] .'"/></td>';
+        echo '<td><input type="text" readonly name="pro_GradoAcademico" value="'. $row['pro_GradoAcademico'] .'"/></td>';
         echo '<td><input type="text" name="pro_AniosExperiencia" value="'. $row['pro_AniosExperiencia'] .'"/></td>';
     ?>   
         <td><input type="submit" value="Actualizar" name="Actualizar" id="Actualizar" onclick="return confirm('Seguro que desea guardar los cambios?')" /></td>
