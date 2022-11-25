@@ -1,6 +1,6 @@
 <?php
 
-include '../data/EstudianteData.php';
+include '../data/estudianteData.php';
 
 class EstudianteBusiness{
 
@@ -14,13 +14,13 @@ class EstudianteBusiness{
         return $this->estudianteData->insertEstudiante($Estudiante);
     }
 
-   // public function update($Estudiante) {
-     //   return $this->estudianteData->updateCarrera($Estudiante);
-    //}
+   public function update($Estudiante) {
+       return $this->estudianteData->updateEstudiante($Estudiante);
+    }
 
- //   public function delete($id) {
-   //     return $this->estudianteData->deleteCarrera($id);
-    //}
+   public function delete($id) {
+       return $this->estudianteData->deleteEstudiante($id);
+    }
 
     public function obtener() {
    return $this->estudianteData->getEstudiantes();

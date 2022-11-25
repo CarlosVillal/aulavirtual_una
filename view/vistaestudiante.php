@@ -1,49 +1,45 @@
 <?php 
-  include '../business/EstudianteBusiness.php'; 
+  include '../business/estudianteBusiness.php'; 
   include_once '../data/data.php';
   Data::Conexion();
 ?>
 
 <!DOCTYPE html>
 <head>
-
     <title>Estudiantes</title>
 </head>
 <body>
 
-
-
-<form onsubmit="return(validar());" method="POST"  id="estudianteForm" action="../business/EstudianteAction.php">  
-                          <div class="table-responsive">  
-                               <table class="table table-bordered">       
-                      
-
-                                <td><label>Cédula: </label>
-                                  <input type="text" id="est_Cedula" name="est_Cedula" required></td>
+<form onsubmit="return(validar());" method="POST"  id="estudianteForm" action="../business/estudianteAction.php">  
+    <div class="table-responsive">  
+    <table class="table table-bordered">       
+    
+    <td><label>Cédula: </label>
+    <input type="text" id="est_Cedula" name="est_Cedula" required></td>
                             
-                                  <td><label>Nombre: </label>
-                                  <input type="text" id="est_Nombre" name="est_Nombre" required></td>
+    <td><label>Nombre: </label>
+    <input type="text" id="est_Nombre" name="est_Nombre" required></td>
 
-                                  <td><label>Primer Apellido: </label>
-                                  <input type="text" id="est_Apellido1" name="est_Apellido1" required></td>
+    <td><label>Primer Apellido: </label>
+    <input type="text" id="est_Apellido1" name="est_Apellido1" required></td>
                                   
-                                  <td><label>Sengundo Apellido: </label>
-                                  <input type="text" id="est_Apellido2" name="est_Apellido2" required></td>
+    <td><label>Sengundo Apellido: </label>
+    <input type="text" id="est_Apellido2" name="est_Apellido2" required></td>
                                         
-                                  <td><label>Dirección: </label>
-                                  <input type="text" id="est_direccion" name="est_direccion" required></td>
+    <td><label>Dirección: </label>
+    <input type="text" id="est_direccion" name="est_direccion" required></td>
                                   
-                                  <td><p>Tipo de beca: <select id="est_TipoBeca" name="est_TipoBeca" required >
-                                <option value="No aplica">‘No aplica</option>    
-                                <option value="Luis Felipe">Luis Felipe</option>    
-                                <option value="Omar Dengo">Omar Dengo</option>    
+    <td><p>Tipo de beca: <select id="est_TipoBeca" name="est_TipoBeca" required >
+    <option value="No aplica">No aplica</option>    
+    <option value="Luis Felipe">Luis Felipe</option>    
+    <option value="Omar Dengo">Omar Dengo</option>    
                                
-                                </select></td>
+  </select></td>
 
 
-                      <td><input onclick="return confirm('Seguro que desea almacenar los datos?')" type="submit" value="Registrar" name="Insertar" id="Insertar"/> </td>
-                        </table>      
-                        </div>  
+  <td><input onclick="return confirm('Seguro que desea almacenar los datos?')" type="submit" value="Registrar" name="Insertar" id="Insertar"/> </td>
+  </table>      
+  </div>  
       </form>  
 <br><br><br>
 
@@ -64,16 +60,16 @@
                   $estudiante = $estudianteBusiness->obtener();
                    foreach ($estudiante as $row) {
 
-                    echo '<form  method="post" enctype="multipart/form-data" action="../business/EstudianteAction.php">';
-                    echo '<input type="hidden" name="est_Cedula" value="'. $row->getest_Cedula().'">';
-                            echo '<tr>';
+                    echo '<form  method="post" enctype="multipart/form-data" action="../business/estudianteAction.php">';
+                    echo '<input type="hidden" name="est_Cedula" value="'. $row['est_Cedula'] .'">';
+                    echo '<tr>';
                           
-                            echo '<td><input type="text" id="est_Cedula" name="est_Cedula"  value="'. $row->getest_Cedula(). '"/></td>';
-                          echo '<td><input type="text" id="est_Nombre" name="est_Nombre"  value="'. $row->getest_Nombre(). '"/></td>';
-                      echo '<td><input type="text" id="est_Apellido1" name="est_Apellido1" value="'. $row->getest_Apellido1(). '"/></td>';
-                      echo '<td><input type="text" name="est_Apellido2" id="est_Apellido2" value="'. $row->getest_Apellido2(). '"/></td>';
-                       echo '<td><input type="text" name="est_direccion" id="est_direccion" value="'. $row->getest_direccion(). '"/></td>';           
-                   echo '<td><input type="text" name="est_TipoBeca" id="est_TipoBeca" value="'. $row->getest_TipoBeca(). '"/></td>';                                 
+                    echo '<td><input type="text" id="est_Cedula" name="est_Cedula"  value="'. $row['est_Cedula'] . '"/></td>';
+                    echo '<td><input type="text" id="est_Nombre" name="est_Nombre"  value="'. $row['est_Nombre'] . '"/></td>';
+                    echo '<td><input type="text" id="est_Apellido1" name="est_Apellido1" value="'. $row['est_Apellido1'] . '"/></td>';
+                    echo '<td><input type="text" name="est_Apellido2" id="est_Apellido2" value="'. $row['est_Apellido2'] . '"/></td>';
+                    echo '<td><input type="text" name="est_direccion" id="est_direccion" value="'. $row['est_direccion'] . '"/></td>';           
+                    echo '<td><input type="text" name="est_TipoBeca" id="est_TipoBeca" value="'. $row['est_TipoBeca'] . '"/></td>';                                 
 
                          ?> 
                             <td><input type="submit" value="Actualizar" name="Actualizar" id="update" onclick="return confirm('Seguro que desea guardar los cambios?')" /></td>

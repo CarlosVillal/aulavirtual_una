@@ -21,25 +21,24 @@
     <td><label>Nombre de curso: </label><input type="text" id="cur_Nombre" name="cur_Nombre" placeholder="Nombre de curso" require></td>
     <td><label>Numero de cupos: </label><input type="number" id="cur_CantidadCupos" name="cur_CantidadCupos" placeholder="N° de cupos"  ></td>
     <td><label>Vigencia: </label><select name="cur_Vigencia" id="cur_Vigencia">
-        <option value="Trimestre">Trimestre</option>
-        <option value="Cuatrimestre">Cuatrimestre</option>
-        <option value="Semestre">Semestre</option>
+        <option value="Activo">Activo</option>
+        <option value="Finalizado">Finalizado</option>
     </select></td>
     <td><label>Carrera: </label><select name="car_Id" id="car_Id" required>
     <?php
     $carrerabusiness = new CarreraBusiness();
-    $carrera = $carrerabusiness->getAllTBCarrera();
+    $carrera = $carrerabusiness->obtener();
     foreach ($carrera as $row) {                                
-        echo '<option value="'. $row->getCarreraId(). '">'. $row->getNombreCarrera(). '</option>';                                
+        echo '<option value="'. $row['car_Id']. '">'. $row['car_Nombre']. '</option>';                                
     }
     ?>
     </select></td>
     <td><label>Profesor: </label><select name="pro_Cedula" id="pro_Cedula" required>
     <?php
-    $profesorbusiness = new Profesor();
-    $profesor = $profesorbusiness->getAllTBProfesor();
-    foreach ($carrera as $row) {                                
-        echo '<option value="'. $row->getpro_Cedula(). '">'. $row->getpro_Nombre(). ' '. $row->getpro_Apellido1(). '</option>';                                
+    $profesorbusiness = new ProfesorBusiness();
+    $profesor = $profesorbusiness->obtener();
+    foreach ($profesor as $row) {                                
+        echo '<option value="'. $row['pro_Cedula'] .'">'. $row['pro_Nombre'] .' '. $row['pro_Apellido1'] .' '. $row['pro_Apellido2'] .'</option>';                                
     }
     ?>
     </select></td>
@@ -69,15 +68,15 @@
         echo '<form  method="post" enctype="multipart/form-data" action="../business/cursoAction.php">';
         
         echo '<tr>';
-        echo '<td><input type="text" readonly name="cur_Sigla" value="'. $row->getcur_Sigla().'"/></td>';
-        echo '<td><input type="text" name="cur_Nombre" value="'. $row->getcur_Nombre().'"/></td>';
-        echo '<td><input type="text" name="cur_CantidadCupos" value="'. $row->getcur_CantidadCupos().'"/></td>';
-        echo '<td><input type="text" name="cur_Vigencia" value="'. $row->getcur_Vigencia().'"/></td>';
-        echo '<td><input type="text" name="car_Id" value="'. $row->getcar_Id().'"/></td>';
-        echo '<td><input type="text" name="pro_Cedula" value="'. $row->getpro_Cedula().'"/></td>';
+        echo '<td><input type="text" readonly name="cur_Sigla" value="'. $row['cur_Sigla'].'"/></td>';
+        echo '<td><input type="text" name="cur_Nombre" value="'. $row['cur_Nombre'].'"/></td>';
+        echo '<td><input type="text" name="cur_CantidadCupos" value="'. $row['cur_CantidadCupos'].'"/></td>';
+        echo '<td><input type="text" name="cur_Vigencia" value="'. $row['cur_Vigencia'].'"/></td>';
+        echo '<td><input type="text" name="car_Id" value="'. $row['car_Id'].'"/></td>';
+        echo '<td><input type="text" name="pro_Cedula" value="'. $row['pro_Cedula'].'"/></td>';
     ?>   
-        <td><input type="submit" value="Actualizar" name="Actualizar" id="Actualizar" onclick="return confirm('Seguro que desea guardar los cambios?')" /></td>
-        <td><input type="submit" value="Eliminar" name="Eliminar" id="Eliminar" onclick="return confirm('Seguro que desea eliminar el registro?')" /></td>
+        <td><input type="submit" value="Actualizar" name="Actualizar" id="Actualizar" onclick="return confirm('Seguro que desea guardar los cambios?')" />
+        <input type="submit" value="Eliminar" name="Eliminar" id="Eliminar" onclick="return confirm('Seguro que desea eliminar el registro?')" /></td>
     
 <tr>
 <td>

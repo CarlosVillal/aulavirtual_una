@@ -14,52 +14,48 @@
 <body>
 
 <form method="POST"  id="carreraForm" action="../business/carreraAction.php">  
-                          <div class="table-responsive">  
-                               <table class="table table-bordered">       
+    <div class="table-responsive">  
+    <table class="table table-bordered">       
                     
-                               <td><label>ID de carrera: </label>
-                                  <input type="number" name="car_Id" required></td>
+    <!-- <td><label>ID de carrera: </label>
+    <input type="number" name="car_Id"></td> -->
 
-                                  <td><label>Nombre de carrera: </label>
-                                  <input type="text" name="car_Nombre"></td>
+    <td><label>Nombre de carrera: </label>
+    <input type="text" id="car_Nombre" name="car_Nombre"></td>
 
-                      <td><input onclick="return confirm('Seguro que desea almacenar los datos?')" type="submit" value="Registrar" name="Insertar" id="Insertar"/> </td>
-                        </table>      
-                        </div>  
-      </form>  
+    <td><input onclick="return confirm('Seguro que desea almacenar los datos?')" type="submit" value="Registrar" name="Insertar" id="Insertar"/> </td>
+</table>      
+</div>  
+</form>  
 <br><br><br>
 
 <table class="table table-striped table-bordered" >
                   <thead>
                     <tr>
-                    <th>ID de carrera</th>  
-                      <th>Nombre de carrera</th>  
-                                                       
+                      <th>Nombre de carrera</th>                                 
                     </tr>
                   </thead>
                   <tbody>
                   <?php
-             //      $carreraBusiness = new CarreraBusiness();
-               //    $carreras = $carreraBusiness->obtener();
-                 //  foreach ($carreras as $row) {
+                   $carreraBusiness = new CarreraBusiness();
+                   $carreras = $carreraBusiness->obtener();
+                   foreach ($carreras as $row) {
 
                  
-                   // echo '<form  method="post" enctype="multipart/form-data" action="../business/carreraAction.php">';
-                   // echo '<input type="hidden" name="car_Id" value="'. $row->getcar_Id().'">';
-                     //       echo '<tr>';
-                          
-                       //     echo '<td><input type="text" id="car_Nombre" name="car_Nombre"  value="'. $row->getcar_Nombre(). '"/></td>';       
+                    echo '<form  method="post" enctype="multipart/form-data" action="../business/carreraAction.php">';
+                    echo '<input type="hidden" name="car_Id" value="'. $row['car_Id'].'">';
+                            
+                    echo '<tr>';                          
+                    echo '<td><input type="text" name="car_Nombre"  value="'. $row['car_Nombre'] .'"/></td>';       
 
                          ?> 
-                            <td><input type="submit" value="Actualizar" name="Actualizar" id="update" onclick="return confirm('Seguro que desea guardar los cambios?')" /></td>
-                            <td><input type="submit" value="Eliminar" name="Eliminar" id="delete" onclick="return confirm('Seguro que desea eliminar el registro?')" /></td>
+                            <td><input type="submit" value="Actualizar" name="Actualizar" id="update" onclick="return confirm('Seguro que desea guardar los cambios?')" />
+                            <input type="submit" value="Eliminar" name="Eliminar" id="delete" onclick="return confirm('Seguro que desea eliminar el registro?')" /></td>
                          <?php  
                          
                             echo '</tr>';
-                            echo '</form>';    
-
-                  // }
-                                      
+                            echo '</form>';   
+                   }                                      
                    ?>
                    <tr>
                  <td></td>

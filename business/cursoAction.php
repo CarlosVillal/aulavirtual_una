@@ -3,6 +3,7 @@ include 'cursoBusiness.php';
 
 
 if(isset($_POST['Insertar'])){
+
     $cur_Sigla = $_POST['cur_Sigla'];
     $cur_Nombre = $_POST['cur_Nombre'];
     $cur_CantidadCupos = $_POST['cur_CantidadCupos'];
@@ -25,7 +26,7 @@ if(isset($_POST['Insertar'])){
 
 
 
-//$metodoAction ==2, es eliminar un registro 
+//eliminar un registro 
 if(isset($_POST['Eliminar'])){
 
     if (isset($_POST['cur_Sigla'])){
@@ -35,17 +36,17 @@ if(isset($_POST['Eliminar'])){
         $result = $cursoBusiness->delete($id);
         
     if($result == 1){           
-        header("Location: ../views/vistaCurso.php?success=deleted");
+        header("Location: ../view/vistaCurso.php?success=deleted");
     }else{       
-        header("Location: ../views/vistaCurso.php?error=dbError");
+        header("Location: ../view/vistaCurso.php?error=dbError");
     }
     }
 }
 
 
-//$metodoAction == 3, es actualizar un registro 
-
+//actualizar un registro 
 if(isset($_POST['Actualizar'])){
+
     $cur_Sigla = $_POST['cur_Sigla'];
     $cur_Nombre = $_POST['cur_Nombre'];
     $cur_CantidadCupos = $_POST['cur_CantidadCupos'];
@@ -60,9 +61,9 @@ if(isset($_POST['Actualizar'])){
     $resultado = $cursoBusiness->update($curso);
     
     if($resultado == 1){
-        Header("Location: ../views/vistaCurso.php?success=update");
+        Header("Location: ../view/vistaCurso.php?success=update");
     }else{
-        Header("Location: ../views/vistaCurso.php?error=dbError");
+        Header("Location: ../view/vistaCurso.php?error=dbError");
     }
 }
 
