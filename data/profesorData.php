@@ -41,7 +41,7 @@ class ProfesorData extends Data {
         $conexion = new PDO("sqlsrv:server=$serverName;database=DB_AulaVirtual_UNA");
 
         $sql = $conexion->prepare("EXEC sp_eliminar_Profesor ?");
-        $sql->bindParam(1, $pro_Cedula , PDO::PARAM_STR);
+        $sql->bindParam(1, $pro_Cedula , PDO::PARAM_INT);
         $resultado= $sql->execute();
         
         return $resultado;
