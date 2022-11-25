@@ -9,15 +9,20 @@ class Estudiante{
     private $est_Apellido2;
     private $est_direccion;
     private $est_TipoBeca;
+    private $est_FechaNacimiento;
+    private $est_Carrera;
     
-    function Estudiante($est_Cedula, $est_Nombre, $est_Apellido1, $est_Apellido2,$est_direccion,$est_TipoBeca){
+    function Estudiante($est_Cedula, $est_Nombre, $est_Apellido1, $est_Apellido2,
+    $est_direccion,$est_TipoBeca, $est_FechaNacimiento,$est_Carrera){
+
         $this->est_Cedula = $est_Cedula;
         $this->est_Nombre = $est_Nombre;
         $this->est_Apellido1 = $est_Apellido1;
         $this->est_Apellido2 = $est_Apellido2;
         $this->est_direccion = $est_direccion;
         $this->est_TipoBeca = $est_TipoBeca;
-
+        $this->est_FechaNacimiento = $est_FechaNacimiento;
+        $this->est_Carrera = $est_Carrera;
     }
 
     function setest_Cedula($est_Cedula){
@@ -69,6 +74,24 @@ class Estudiante{
     function getest_TipoBeca(){
         return $this->est_TipoBeca;
     }
+
+    function setest_FechaNacimiento($est_FechaNacimiento){
+        $this->est_FechaNacimiento = $est_FechaNacimiento;
+    }
+
+    function getest_FechaNacimiento(){
+        return $this->est_FechaNacimiento;
+    }
+
+    function setest_Carrera($est_Carrera){
+        $this->est_Carrera = $est_Carrera;
+    }
+
+    function getest_Carrera(){
+        return $this->est_Carrera;
+    }
+
+
 }
 
 

@@ -9,9 +9,11 @@ if(isset($_POST['Insertar'])){
  $est_Apellido2 = $_POST['est_Apellido2'];
  $est_direccion = $_POST['est_direccion'];
  $est_TipoBeca = $_POST['est_TipoBeca'];
+ $est_FechaNacimiento = $_POST['est_FechaNacimiento'];
+ $est_Carrera = $_POST['est_Carrera'];
  
  $estudiantes = new Estudiante($est_Cedula, $est_Nombre, $est_Apellido1, 
- $est_Apellido2, $est_direccion, $est_TipoBeca);
+ $est_Apellido2, $est_direccion, $est_TipoBeca, $est_FechaNacimiento, $est_Carrera);
  
  $estudianteBusiness = new EstudianteBusiness();
  $resultado = $estudianteBusiness->insertar($estudiantes);
@@ -51,9 +53,11 @@ if(isset($_POST['Actualizar'])){
     $est_Apellido2 = $_POST['est_Apellido2'];
     $est_direccion = $_POST['est_direccion'];
     $est_TipoBeca = $_POST['est_TipoBeca'];
+    $est_FechaNacimiento = $_POST['est_FechaNacimiento'];
+    $est_Carrera = $_POST['est_Carrera'];
     
-    $estudiante = new Estudiante($est_Cedula, $est_Nombre, 
-    $est_Apellido1, $est_Apellido2,$est_direccion, $est_TipoBeca);
+    $estudiante = new Estudiante($est_Cedula, $est_Nombre, $est_Apellido1, 
+    $est_Apellido2,$est_direccion, $est_TipoBeca, $est_FechaNacimiento, $est_Carrera);
     
     $estudianteBusiness = new EstudianteBusiness();
     $resultado = $estudianteBusiness->update($estudiante);
