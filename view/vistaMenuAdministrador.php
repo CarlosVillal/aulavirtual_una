@@ -26,7 +26,7 @@
 
         }
         a {
-          
+            font-family: cursive;
            
 
         }
@@ -76,9 +76,9 @@
                   <thead>
                  
                     <br/>
-            <a href="vistaProfesor.php">Area Docente</a><br/><br/>   
-            <a href="vistaestudiante.php">Area Estudiante</a><br/><br/>   
-            <a href="vistaCurso.php">Area Curso</a><br/><br/>    
+                    <button><a href="vistaProfesor.php">Area Docente</a></button><br/>  
+                    <button><a href="vistaestudiante.php">Area Estudiante</a></button><br/>   
+                    <button><a href="vistaCurso.php">Area Curso</a></button><br/>    
                       <button>Generar Respaldo</button><br><br>                            
                    
                   </thead>
@@ -88,7 +88,7 @@
  
 
             <?php
-            echo '</br></br><td><button name="Volver" id="volver"><a href="../">Volver</a></button></td><br>';
+            echo '</br><td><button name="Volver" id="volver"><a href="../">Volver</a></button></td><br>';
             ?>
 
 

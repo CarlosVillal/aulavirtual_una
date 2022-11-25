@@ -28,13 +28,7 @@
         }
         a {
           
-            margin:0 1px;
-            width: 900px;
-            font-weight:bold;
-            font-size:1em;
-            line-height: 20px;
-            display:block;
-            text-decoration: none
+      
             font-family: cursive;
 
         }
@@ -79,23 +73,23 @@
 <body>
 <h1>Menú Profesor<h1>
 
-<br><br>
 
-<table class="table table-striped table-bordered" >
+
+
                   <thead>
-                    <tr>
-                    <br><br>  
-                    <th><a href="view/vistaCurso.php">Area Cursos</a></th> <br><br>   
-                      <th><a href="view/vistaAdministrador.php">Distribuir Rúbrica de Calificación</a></th> <br><br>   
-                      <th><a href="view/vistaAdministrador.php">Calificar Evaluaciones</a></th> <br><br>   
-                      <th><a href="view/vistaestudiante.php">Ver Reporte de Estudiantes</a></th> <br><br>   
-                      <th><a href="view/vistaAdministrador.php">Ver Histórico de Cursos</a></th> <br><br>    
+              
+                    <br> 
+                    <button><a href="vistaCurso.php">Area Cursos</a></button><br>   
+                    <button><a href="vistaAdministrador.php">Distribuir Rúbrica de Calificación</a></button><br>
+                    <button><a href="view/vistaAdministrador.php">Calificar Evaluaciones</a></button><br>   
+                    <button><a href="vistaestudiante.php">Ver Reporte de Estudiantes</a></button><br>   
+                    <button><a href="view/vistaAdministrador.php">Ver Histórico de Cursos</a></button><br>    
                                   
-                    </tr>
+                  
                   </thead>
                   <tbody>
               
-                   <tr>
+                 
                  <td></td>
                  <td>
                   
@@ -103,10 +97,10 @@
 
                    </tbody>
  
-             </table>
+   
 
             <?php
-            echo '</br></br><td><button name="Volver" id="volver"><a href="../">Volver</a></button></td><br>';
+            echo '</br><td><button name="Volver" id="volver"><a href="../">Volver</a></button></td><br>';
             ?>
 
 

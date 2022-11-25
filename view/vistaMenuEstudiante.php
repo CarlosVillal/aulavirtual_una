@@ -26,16 +26,7 @@
 
         }
         a {
-          
-            margin:0 1px;
-            width: 900px;
-            font-weight:bold;
-            font-size:1em;
-            line-height: 20px;
-            display:block;
-            text-decoration: none
-            font-family: cursive;
-
+          font-family: cursive;
         }
         table, th {
             margin: auto;
@@ -54,7 +45,6 @@
 
         th, td {
             text-align: left;
-            padding: 15px;
             font-family: cursive;
         }
 
@@ -78,19 +68,19 @@
 <body>
 <h1>Menú Estudiante<h1>
 
-<br><br>
 
-<table class="table table-striped table-bordered" >
+
+
                   <thead>
-                    <tr>
-                    <br><br>  
-                    <th><a href="view/vistaCurso.php">Ver Cursos Inscritos</a></th> <br><br>   
-                      <th><a href="view/vistaAdministrador.php">Entregar Evaluaciones</a></th> <br><br>   
-                      <th><a href="view/vistaAdministrador.php">Ver Notas Parciales y Finales</a></th> <br><br>   
-                      <th><a href="view/vistaAdministrador.php">Ver Histórico De Cursos</a></th> <br><br>   
-                      <th><a href="view/vistaAdministrador.php">Ver Perfil</a></th> <br><br>    
+                   
+                    <br> 
+                    <button><a href="vistaCurso.php">Ver Cursos Inscritos</a></button><br>  
+                    <button><a href="view/vistaAdministrador.php">Entregar Evaluaciones</a></button><br>  
+                    <button><a href="view/vistaAdministrador.php">Ver Notas Parciales y Finales</a></button><br>   
+                    <button><a href="view/vistaAdministrador.php">Ver Histórico De Cursos</a></button><br>   
+                    <button><a href="view/vistaAdministrador.php">Ver Perfil</a></button><br><br>    
                                   
-                    </tr>
+                   
                   </thead>
                   <tbody>
               
@@ -102,10 +92,10 @@
 
                    </tbody>
  
-             </table>
+       
 
             <?php
-            echo '</br></br><td><button name="Volver" id="volver"><a href="../">Volver</a></button></td><br>';
+            echo '</br><td><button name="Volver" id="volver"><a href="../">Volver</a></button></td><br>';
             ?>
 
 
