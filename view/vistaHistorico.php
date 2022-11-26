@@ -1,5 +1,5 @@
 <?php 
-  include '../business/estudianteBusiness.php'; 
+  include '../business/cursoBusiness.php'; 
   include_once '../data/data.php';
   Data::Conexion();
 ?>
@@ -19,7 +19,7 @@
                     <th>Numero de cupos</th>
                     <th>Vigencia</th>
                     <th>Carrera</th>
-    <th>Profesor</th>                                   
+                   <th>Profesor</th>                                   
                     </tr>
                   </thead>
                   <tbody>
@@ -37,8 +37,7 @@
         echo '<td><input type="text" name="car_Id" value="'. $row['car_Id'].'"/></td>';
         echo '<td><input type="text" name="pro_Cedula" value="'. $row['pro_Cedula'].'"/></td>';
     ?>   
-        <td><input type="submit" value="Actualizar" name="Actualizar" id="Actualizar" onclick="return confirm('Seguro que desea guardar los cambios?')" />
-        <input type="submit" value="Eliminar" name="Eliminar" id="Eliminar" onclick="return confirm('Seguro que desea eliminar el registro?')" /></td>
+    
     
                          <?php  
                          

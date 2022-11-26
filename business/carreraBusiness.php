@@ -13,6 +13,11 @@ class CarreraBusiness{
         return $this->carreraData->insertCarrera($Carrera);
     }
 
+    public function insertar2($Carrera) {
+        return $this->carreraData->insertcursoHistorico($Carrera);
+    }
+
+
    public function update($Carrera) {
        return $this->carreraData->updateCarrera($Carrera);
    }
