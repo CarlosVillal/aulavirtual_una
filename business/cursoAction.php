@@ -6,7 +6,7 @@ if(isset($_POST['Insertar'])){
 
     $cur_Sigla = $_POST['cur_Sigla'];
     $cur_Nombre = $_POST['cur_Nombre'];
-    $cur_CantidadCupos = $_POST['cur_CantidadCupos'];
+    $cur_CantidadCupos = 35;
     $cur_Vigencia = $_POST['cur_Vigencia'];
     $car_Id = $_POST['car_Id'];
     $pro_Cedula = $_POST['pro_Cedula'];

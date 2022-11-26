@@ -71,11 +71,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 <body>
+  
 <h1>Menú Profesor<h1>
-
-
-
-
                   <thead>
               
                     <br> 

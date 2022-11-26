@@ -10,6 +10,7 @@
 	<title>Profesores</title>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="../static/js/funciones.js" ></script>
 </head>
 <body>
 
@@ -92,7 +93,20 @@
     </tbody>
 </table>
    
-    </br></br>
+    <!-- </br></br>
+    <div>
+        <form>
+        <label>Ver Reportes</label>
+            <select id="opcion" >
+                <option value="reporteDetalle">Reportes en Detalle</option>
+                <option value="reporteEspecifico">Reportes en Especifico</option>
+            </select>
+            <input class="btnSelect" type="button" value="Mostrar" onclick="verificar()" /> 
+
+            <div id="contenedor"></div>               
+        </form>
+            </div> -->
+            <br/><br/>
     <button name="Volver" id="volver"><a href="../">Volver</a></button>
    
 

@@ -24,7 +24,14 @@ class ProfesorBusiness{
      public function obtener() {
       return $this->profesorData->getprofesor();
     }
+
+    public function obtenerReporteEspecifico() {
+        return $this->profesorData->obtenerReporteEspecifico();
+      }
     
+    public function obtenerReporteDetalle() {
+        return $this->profesorData->obtenerReporteDetalle();
+    }
     
 }
 

@@ -76,10 +76,11 @@
                   <thead>
                  
                     <br/>
-                    <button><a href="vistaProfesor.php">Area Docente</a></button><br/>  
+                    <button><a href="vistaOpcionesProfesor.php">Area Docente</a></button><br/>  
                     <button><a href="vistaestudiante.php">Area Estudiante</a></button><br/>   
-                    <button><a href="vistaCurso.php">Area Curso</a></button><br/>    
-                      <button>Generar Respaldo</button><br><br>                            
+                    <button><a href="vistaCurso.php">Area Curso</a></button><br/>  
+                    <!-- <button><a href="vistaOpcionesProfesor.php">Opciones para profes</a></button><br/>   -->
+                    <button>Generar Respaldo</button><br><br>                            
                    
                   </thead>
                   <tbody>

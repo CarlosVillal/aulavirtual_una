@@ -29,7 +29,7 @@ class CursoData extends Data {
         return $resultado;    
         }
 
-        public function insertcursoHistorico($curso){
+     /*   public function insertcursoHistorico($curso){
             $serverName = gethostname();
             $conexion = new PDO("sqlsrv:server=$serverName;database=DB_AulaVirtual_UNA");
         
@@ -51,14 +51,14 @@ class CursoData extends Data {
             $resultado= $sql->execute();
     
             return $resultado;    
-            }
+            }*/
 
     public function deletecurso($idCurso){
         $serverName = gethostname();
         $conexion = new PDO("sqlsrv:server=$serverName;database=DB_AulaVirtual_UNA");
 
         $sql = $conexion->prepare("EXEC sp_eliminar_Curso ?");
-        $sql->bindParam(1, $idCurso , PDO::PARAM_INT);
+        $sql->bindParam(1, $idCurso , PDO::PARAM_STR);
         $resultado= $sql->execute();
         
         return $resultado;

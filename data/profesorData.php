@@ -86,6 +86,26 @@ class ProfesorData extends Data {
         return $sql->fetchAll(PDO::FETCH_ASSOC);
      }
 
+     public function obtenerReporteEspecifico(){
+        $serverName = gethostname();
+        $conexion = new PDO("sqlsrv:server=$serverName;database=DB_AulaVirtual_UNA");
+
+        $sql = $conexion->prepare("EXEC sp_reporte_profesor_especifico");
+        $sql->execute();
+        
+        return $sql->fetchAll(PDO::FETCH_ASSOC);
+     }
+
+     public function obtenerReporteDetalle(){
+        $serverName = gethostname();
+        $conexion = new PDO("sqlsrv:server=$serverName;database=DB_AulaVirtual_UNA");
+
+        $sql = $conexion->prepare("EXEC sp_reporte_profesor_detalle");
+        $sql->execute();
+        
+        return $sql->fetchAll(PDO::FETCH_ASSOC);
+     }
+
    
 
 }

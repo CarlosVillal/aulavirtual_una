@@ -20,8 +20,8 @@
 
     <td><label>Siglas: </label><input type="text" id="cur_Sigla" name="cur_Sigla" placeholder="Siglas" require></td>
     <td><label>Nombre de curso: </label><input type="text" id="cur_Nombre" name="cur_Nombre" placeholder="Nombre de curso" require></td>
-    <td><label>Numero de cupos: </label><input type="number" id="cur_CantidadCupos" name="cur_CantidadCupos" placeholder="N° de cupos"  ></td>
-    <!-- <td><label>Vigencia: </label><select name="cur_Vigencia" id="cur_Vigencia">
+   <!-- <td><label>Numero de cupos: </label><input type="number" id="cur_CantidadCupos" name="cur_CantidadCupos" placeholder="N° de cupos"  ></td>
+     <td><label>Vigencia: </label><select name="cur_Vigencia" id="cur_Vigencia">
         <option value="Activo">Activo</option>
         <option value="Finalizado">Finalizado</option>
     </select></td> -->    
