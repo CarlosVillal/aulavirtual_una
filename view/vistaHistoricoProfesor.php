@@ -25,7 +25,7 @@
                   <tbody>
                   <?php
     $historicoBusiness = new HistoricoBusiness();
-    $historico = $historicoBusiness -> obtenerHistorico_Profesor();
+    $historico = $historicoBusiness -> obtenerHistorico_Profesor("701110234");
     foreach ($historico as $row) {
         echo '<form  method="post" enctype="multipart/form-data" action="../business/historicoAction.php">';
         

@@ -77,10 +77,10 @@ if(isset($_POST['Actualizar'])){
     $est_Cedula="702540125";
 if($cur_Vigencia=="Finalizado"){
 
-    $historico2 = new Historico($cur_Sigla, $cur_Nombre, $cur_CantidadCupos, $cur_Vigencia ,$his_Nota,
+    $historico = new HistoricoEstudiante($cur_Sigla, $cur_Nombre, $cur_CantidadCupos, $cur_Vigencia ,$his_Nota,
     $car_Id, $est_Cedula);
-    $historicoBusiness2 = new HistoricoBusiness();
-    $resultado2 = $historicoBusiness2->insertarHistorico_Estudiante($historico2);
+    $historicoBusiness = new HistoricoBusiness();
+    $resultado = $historicoBusiness->insertarHistorico_Estudiante($historico);
 
 
     $historico = new Historico($cur_Sigla, $cur_Nombre, $cur_CantidadCupos, $cur_Vigencia,

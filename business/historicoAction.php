@@ -32,11 +32,11 @@ if(isset($_POST['InsertarHistoricoProfesor'])){
         $his_CantidadEstudiantes = 35;
         $his_Vigencia = $_POST['his_Vigencia'];
         $car_Id = $_POST['car_Id'];
-        $pro_Cedula = $_POST['pro_Cedula'];
-            
-        $historico = new Historico($his_Sigla, $his_Nombre, $his_CantidadEstudiantes, $his_Vigencia,
-        $car_Id, $pro_Cedula);
-     
+        $est_Cedula = "702540125";
+        $his_Nota="100";
+        $historico = new HistoricoEstudiante($cur_Sigla, $cur_Nombre, $his_CantidadEstudiantes, $cur_Vigencia ,$his_Nota,
+        $car_Id, $est_Cedula);
+
      $historicoBusiness = new HistoricoBusiness();
      $resultado = $historicoBusiness->insertar($historico);
      
