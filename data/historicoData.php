@@ -39,7 +39,7 @@ class HistoricoData extends Data {
             $his_Vigencia = $Historico->gethis_Vigencia();
             $his_Nota = "100";
             $car_Id = $Historico->getcar_Id();
-            $pro_Cedula = $Historico->getpro_Cedula();
+            $est_Cedula = $Historico->getpro_Cedula();
            
             $sql = $conexion->prepare("EXEC sp_insertar_Historico_Estudiante ?, ?, ?, ?, ?, ?, ?");
             $sql->bindParam(1,$his_Sigla , PDO::PARAM_STR);
@@ -48,7 +48,7 @@ class HistoricoData extends Data {
             $sql->bindParam(4,$his_Vigencia , PDO::PARAM_STR);
             $sql->bindParam(5,$his_Nota , PDO::PARAM_STR);
             $sql->bindParam(6,$car_Id , PDO::PARAM_INT);
-            $sql->bindParam(7,$pro_Cedula , PDO::PARAM_STR);
+            $sql->bindParam(7,$est_Cedula , PDO::PARAM_STR);
           
             $resultado= $sql->execute();
     
