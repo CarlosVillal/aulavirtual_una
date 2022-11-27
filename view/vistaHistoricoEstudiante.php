@@ -19,14 +19,13 @@
                     <th>Numero de cupos</th>
                     <th>Vigencia</th>
                     <th>Nota Final</th>
-                    <th>Carrera</th>
-                   <th>Profesor</th>                                   
+                    <th>Estudiante</th>                              
                     </tr>
                   </thead>
                   <tbody>
                   <?php
     $historicBusiness = new HistoricoBusiness();
-    $historico = $historicBusiness -> obtenerHistorico_Estudiante(702540125);
+    $historico = $historicBusiness -> obtenerHistorico_Estudiante("702540125");
     foreach ($historico as $row) {
         echo '<form  method="post" enctype="multipart/form-data" action="../business/historicoAction.php">';
         
@@ -36,7 +35,7 @@
         echo '<td><input type="text" name="his_CantidadEstudiantes" value="'. $row['his_CantidadEstudiantes'].'"/></td>';
         echo '<td><input type="text" name="his_Vigencia" value="'. $row['his_Vigencia'].'"/></td>';
         echo '<td><input type="text" name="car_Id" value="'. $row['car_Id'].'"/></td>';
-        echo '<td><input type="text" name="pro_Cedula" value="'. $row['pro_Cedula'].'"/></td>';
+        echo '<td><input type="text" name="est_Cedula" value="'. $row['est_Cedula'].'"/></td>';
     ?>   
     
     
