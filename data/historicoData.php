@@ -59,18 +59,19 @@ class HistoricoData extends Data {
                 $serverName = gethostname();
                 $conexion = new PDO("sqlsrv:server=$serverName;database=DB_AulaVirtual_UNA");
         
-                $sql = $conexion->prepare("EXEC sp_ver_historico_profesores");
+                $sql = $conexion->prepare("EXEC sp_ver_historicos_profesores");
                 $sql->execute();
                 
                 return $sql->fetchAll(PDO::FETCH_ASSOC);
             }
         
 
-    public function getHistoricoEstudiante(){
+    public function getHistoricoEstudiante($est_Cedula){
         $serverName = gethostname();
         $conexion = new PDO("sqlsrv:server=$serverName;database=DB_AulaVirtual_UNA");
 
-        $sql = $conexion->prepare("EXEC sp_ver_historico_estudiantes");
+        $sql = $conexion->prepare("EXEC sp_ver_historicos_estudiantes ?");
+        $sql->bindParam(1, $est_Cedula , PDO::PARAM_INT);
         $sql->execute();
         
         return $sql->fetchAll(PDO::FETCH_ASSOC);

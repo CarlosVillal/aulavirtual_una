@@ -76,7 +76,6 @@
         echo '<td><input type="text" readonly name="cur_Sigla" value="'. $row['cur_Sigla'].'"/></td>';
         echo '<td><input type="text" name="cur_Nombre" value="'. $row['cur_Nombre'].'"/></td>';
         echo '<td><input type="text" name="cur_CantidadCupos" value="'. $row['cur_CantidadCupos'].'"/></td>';
-       // echo '<td><input type="text" name="cur_Vigencia" value="'. $row['cur_Vigencia'].'"/></td>';
         echo '<td><select name="cur_Vigencia" id="cur_Vigencia">
         <option value="'. $row['cur_Vigencia'].'">'. $row['cur_Vigencia'].'</option>
         <option value="Activo">Activo</option>

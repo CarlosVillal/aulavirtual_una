@@ -1,6 +1,6 @@
 <?php
 include 'cursoBusiness.php';
-
+include 'historicoBusiness.php';
 
 if(isset($_POST['Insertar'])){
 
@@ -63,7 +63,6 @@ if(isset($_POST['Eliminar'])){
     }
 }
 
-
 //actualizar un registro 
 if(isset($_POST['Actualizar'])){
 
@@ -73,13 +72,28 @@ if(isset($_POST['Actualizar'])){
     $cur_Vigencia = $_POST['cur_Vigencia'];
     $car_Id = $_POST['car_Id'];
     $pro_Cedula = $_POST['pro_Cedula'];
-        
+    $his_Nota="100";
+if($cur_Vigencia=="Finalizado"){
+    $historico = new Historico($cur_Sigla, $cur_Nombre, $cur_CantidadCupos, $cur_Vigencia,
+    $car_Id, $pro_Cedula);
+ $historicoBusiness = new HistoricoBusiness();
+ $resultado = $historicoBusiness->insertarHistorico_Profesor($historico);
+
+// $historico2 = new Historico2($cur_Sigla, $cur_Nombre, $cur_CantidadCupos, $cur_Vigencia,$his_Nota,
+// $car_Id, $pro_Cedula);
+//$historicoBusiness2 = new HistoricoBusiness2();
+//$resultado2 = $historicoBusiness2->insertHistorico_Estudiante($historico);
+
+
+
+}else{
+
     $curso = new Curso($cur_Sigla, $cur_Nombre, $cur_CantidadCupos, $cur_Vigencia,
     $car_Id, $pro_Cedula);
     
     $cursoBusiness = new CursoBusiness();
     $resultado = $cursoBusiness->update($curso);
-    
+}
     if($resultado == 1){
         Header("Location: ../view/vistaCurso.php?success=update");
     }else{

@@ -26,15 +26,15 @@
                   <tbody>
                   <?php
     $historicBusiness = new HistoricoBusiness();
-    $historico = $historicBusiness -> obtenerHistorico_Estudiante();
+    $historico = $historicBusiness -> obtenerHistorico_Estudiante(702540125);
     foreach ($historico as $row) {
         echo '<form  method="post" enctype="multipart/form-data" action="../business/historicoAction.php">';
         
         echo '<tr>';
-        echo '<td><input type="text" readonly name="cur_Sigla" value="'. $row['cur_Sigla'].'"/></td>';
-        echo '<td><input type="text" name="cur_Nombre" value="'. $row['cur_Nombre'].'"/></td>';
-        echo '<td><input type="text" name="cur_CantidadCupos" value="'. $row['cur_CantidadCupos'].'"/></td>';
-        echo '<td><input type="text" name="cur_Vigencia" value="'. $row['cur_Vigencia'].'"/></td>';
+        echo '<td><input type="text" readonly name="his_Sigla" value="'. $row['his_Sigla'].'"/></td>';
+        echo '<td><input type="text" name="his_Nombre" value="'. $row['his_Nombre'].'"/></td>';
+        echo '<td><input type="text" name="his_CantidadEstudiantes" value="'. $row['his_CantidadEstudiantes'].'"/></td>';
+        echo '<td><input type="text" name="his_Vigencia" value="'. $row['his_Vigencia'].'"/></td>';
         echo '<td><input type="text" name="car_Id" value="'. $row['car_Id'].'"/></td>';
         echo '<td><input type="text" name="pro_Cedula" value="'. $row['pro_Cedula'].'"/></td>';
     ?>   

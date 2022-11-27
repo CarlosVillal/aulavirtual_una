@@ -16,8 +16,8 @@ class HistoricoBusiness{
         return $this->historicoData->insertHistorico_Estudiante($Historico);
     }
 
-    public function obtenerHistorico_Estudiante() {
-     return $this->historicoData->getHistoricoEstudiante();
+    public function obtenerHistorico_Estudiante($est_Cedula) {
+     return $this->historicoData->getHistoricoEstudiante($est_Cedula);
    }
    public function obtenerHistorico_Profesor() {
     return $this->historicoData->getHistoricoProfesor();
