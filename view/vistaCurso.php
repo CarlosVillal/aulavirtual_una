@@ -20,17 +20,19 @@
 
     <td><label>Siglas: </label><input type="text" id="cur_Sigla" name="cur_Sigla" placeholder="Siglas" require></td>
     <td><label>Nombre de curso: </label><input type="text" id="cur_Nombre" name="cur_Nombre" placeholder="Nombre de curso" require></td>
-  >    
-
-    </select></td>                       
-    <td><p>Carrera: <select id="car_Id" name="car_Id" >
-    <option value="Ingeniería en Sistemas">Ingeniería en Sistemas</option>    
-    <option value="Mercadeo Internacional">Mercadeo Internacional</option>    
-    <option value="Administración">Administración</option>    
-    <option value="Administración de Oficinas">Administración de Oficinas</option>    
-    <option value="Inglés">Inglés</option>                           
-  </select></td>
-  
+   <!-- <td><label>Numero de cupos: </label><input type="number" id="cur_CantidadCupos" name="cur_CantidadCupos" placeholder="N° de cupos"  ></td>
+     <td><label>Vigencia: </label><select name="cur_Vigencia" id="cur_Vigencia">
+        <option value="Activo">Activo</option>
+        <option value="Finalizado">Finalizado</option>
+    </select></td> -->    
+    <td><label>Carrera: </label><select name="car_Id" id="car_Id" required>
+    <?php
+    $carrerabusiness = new CarreraBusiness();
+    $carrera = $carrerabusiness->obtener();
+    foreach ($carrera as $row) {                                
+        echo '<option value="'. $row['car_Id']. '">'. $row['car_Nombre']. '</option>';                                
+    }
+    ?>
     </select></td>
     <td><label>Profesor: </label><select name="pro_Cedula" id="pro_Cedula" required>
     <?php
