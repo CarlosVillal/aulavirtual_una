@@ -72,7 +72,7 @@
 <h1>Menú Administrador<h1>
 
         <?php
-        echo '<form  method="post" enctype="multipart/form-data" action="../business/cursoAction.php">';
+        echo '<form  method="post" enctype="multipart/form-data" action="../business/respaldoAction.php">';
         ?>
                   <thead>
                  
