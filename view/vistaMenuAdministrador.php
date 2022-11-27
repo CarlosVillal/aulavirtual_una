@@ -71,9 +71,8 @@
 <body>
 <h1>Menú Administrador<h1>
 
-        <?php
-        echo '<form  method="post" enctype="multipart/form-data" action="../business/cursoAction.php">';
-        ?>
+
+
                   <thead>
                  
                     <br/>
@@ -83,7 +82,9 @@
                     <!-- <button><a href="vistaOpcionesProfesor.php">Opciones para profes</a></button><br/>   -->
             
 
-                    <td><button onclick="return confirm('Seguro que desea generar un resplado de los datos?')" type="button" name="Respaldar" id="Respaldar">Generar Respaldo</button></td>
+
+                    
+                    <td><input onclick="return confirm('Seguro que desea generar un resplado de los datos?')" type="submit" value="Generar Respaldo" name="Respaldar" id="Respaldar"/> </td>
                    
                   </thead>
                   <tbody>
@@ -95,11 +96,7 @@
             echo '</br><td><button name="Volver" id="volver"><a href="../">Volver</a></button></td><br>';
             ?>
 
-<Script>
 
-
-
-</Script>
 
 
 </body>
