@@ -25,4 +25,8 @@ class EstudianteBusiness{
     public function obtener() {
    return $this->estudianteData->getEstudiantes();
    }
+
+   public function obtenerEstudianteEspecifico($est_Cedula) {
+    return $this->estudianteData->getEstudianteEspecifico($est_Cedula);
+    }
 }

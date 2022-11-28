@@ -70,4 +70,46 @@ if(isset($_POST['Actualizar'])){
 }
 
 
+if(isset($_POST['create'])){
+    if(isset($_FILES['obraimagen']) && isset($_POST['obraid'])){
+
+        $obraId = $_POST['obraid'];
+        $fichero = $_FILES["obraimagen"];
+        $obraimagenId = isset($_POST['obraimagenid']);
+
+        foreach($fichero["tmp_name"] as $key => $image){
+            $nombreArchivo = $_FILES["obraimagen"]["name"][$key];
+            $tipoArchivo = $_FILES["obraimagen"]["type"][$key];
+            $tmpArchivo = $_FILES["obraimagen"]["tmp_name"][$key];
+            $directorio = "../obraimagenes/";
+            if($tipoArchivo == "image/png"){
+                $tipoArchivo = "png";
+            }else
+            if($tipoArchivo == "image/jpeg"){
+                $tipoArchivo = "jpeg";
+            }else
+            if($tipoArchivo == "application/pdf"){
+                $tipoArchivo = "pdf";
+            }
+            $nombre = $obraimagenId."-".$obraId;
+
+            move_uploaded_file($tmpArchivo, "../PdfImagenBusiness/".$nombreArchivo);
+            rename($directorio.$nombreArchivo, $directorio.$nombre.".".$tipoArchivo);
+            $ruta = $directorio.$nombre.".".$tipoArchivo;
+            $pdfImagenBusiness = new PdfImagenBusiness(0, $obraId, $ruta);
+            $pdfImagenBusiness = new PdfImagenBusiness();
+            $result = $PdfImagenBusiness->insertObraImagenes($ObraImagen);
+
+        }
+
+        if ($result == 1) {
+            header("location: ..vistaMiPerfil.php?success=inserted");
+        } else {
+            header("location: ..vistaMiPerfil.php?error=dbError");
+        }
+    }else {
+        header("location: ..vistaMiPerfil.php?error=error");
+    }  
+}
+
 ?>
