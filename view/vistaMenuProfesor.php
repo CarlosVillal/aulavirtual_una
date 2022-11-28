@@ -77,8 +77,8 @@
               
                     <br> 
                     <button><a href="vistaCurso.php">Area Cursos</a></button><br>   
-                    <button><a href="vistaAdministrador.php">Distribuir Rúbrica de Calificación</a></button><br>
-                    <button><a href="view/vistaAdministrador.php">Calificar Evaluaciones</a></button><br>   
+                    <button><a href="vistaRubrica.php">Distribuir Rúbrica de Calificación</a></button><br>
+                    <button><a href="calificarEvaluacionesVista.php">Calificar Evaluaciones</a></button><br>   
                     <button><a href="vistaestudiante.php">Ver Reporte de Estudiantes</a></button><br>   
                     <button><a href="vistaHistoricoProfesor.php">Ver Histórico de Cursos</a></button><br>    
                                   
