@@ -5,6 +5,16 @@
 ?>
 
 <!DOCTYPE html>
+<style>
+        body {
+            text-align: left;
+            margin: 0;
+            padding: 0;
+            font: normal 15px arial, helvetica, sans-serif;
+            background: #AED6F1;
+
+        }
+        </style>
 <head>
 
     <title>Carreras</title>

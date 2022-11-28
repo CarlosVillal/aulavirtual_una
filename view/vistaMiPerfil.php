@@ -5,11 +5,22 @@
 ?>
 
 <!DOCTYPE html>
+
+<style>
+        body {
+            text-align: left;
+            margin: 0;
+            padding: 0;
+            font: normal 15px arial, helvetica, sans-serif;
+            background: #AED6F1;
+
+        }
+        </style>
 <head>
     <title>Perfil Estudiante</title>
 </head>
 <body> 
-<
+
 <table class="table table-striped table-bordered" >
                   <thead>
                   <h1>Perfil Estudiante</h1>
@@ -58,7 +69,57 @@
                     </select></td></br>';
                        
                     ?> 
-                   <td><input type="submit" value="Agregar Imagen" name="create" id="create" onclick="return confirm('Seguro que desea guardar los cambios?')" /></td>
+                    
+                    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+        </script>
+        <span class="heading">Foto de Perfil</span>
+        <form>
+            <div class="holder">
+                <img id="imgPreview" src="#" alt="pic" />
+            </div>
+            <input type="file" name="photograph"
+                   id="photo" required="true" />
+        </form>
+        <style>
+            .holder {
+                height: 200px;
+                width: 200px;
+                border: 2px solid black;
+            }
+            img {
+                max-width: 200px;
+                max-height: 200px;
+                min-width: 200px;
+                min-height: 200px;
+            }
+            input[type="file"] {
+                margin-top: 5px;
+            }
+            .heading {
+                font-family: Montserrat;
+                font-size: 45px;
+                color: green;
+            }
+        </style>
+        <script>
+            $(document).ready(() => {
+                $("#photo").change(function () {
+                    const file = this.files[0];
+                    if (file) {
+                        let reader = new FileReader();
+                        reader.onload = function (event) {
+                            $("#imgPreview")
+                              .attr("src", event.target.result);
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            });
+        </script>
+    
+<br/><br/>
+
                     <?php                           
                     echo '</tr>';
                     echo '</form>';  
@@ -87,7 +148,7 @@
              </tr>
                    </tbody> 
              </table>
-<br><br>
+
             <?php
             echo '</br></br><td><button name="Volver" id="volver"><a href="../">Volver</a></button></td><br>';
             ?>
