@@ -21,7 +21,7 @@ include '../business/profesorBusiness.php';
     <title>Document</title>
 </head>
 <body>
- 
+ <br><br>
 <table class="table table-striped table-bordered" >
     <thead>
     <tr>
@@ -37,10 +37,10 @@ include '../business/profesorBusiness.php';
     $profesor = $profesorBusiness -> obtenerReporteEspecifico();
     foreach ($profesor as $row) {
         echo '<tr>';
-        echo '<td><input type="text" readonly name="pro_Cedula" value="'. $row['cur_Nombre'] .'"/></td>';
-        echo '<td><input type="text" readonly name="pro_Nombre" value="'. $row['car_Nombre'] .'"/></td>';
-        echo '<td><input type="text" readonly name="pro_Apellido2" value="'. $row['cur_Vigencia'] .'"/></td>';
-        echo '<td><input type="text" readonly name="pro_Apellido1" value="'. $row['Estud. Matriculados'] .'"/></td>';
+        echo '<td><input type="text" readonly name="car_Nombre" value="'. $row['car_Nombre'] .'"/></td>';
+        echo '<td><input type="text" readonly name="cur_Nombre" value="'. $row['cur_Nombre'] .'"/></td>';
+        echo '<td><input type="text" readonly name="cur_Vigencia" value="'. $row['cur_Vigencia'] .'"/></td>';
+        echo '<td><input type="text" readonly name="Matriculados" value="'. $row['Estud. Matriculados'] .'"/></td>';
         echo '</tr>';
     }
     ?>   

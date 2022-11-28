@@ -29,8 +29,7 @@
     <table class="table table-bordered"> 
 
     <td><label>Siglas: </label><input type="text" id="cur_Sigla" name="cur_Sigla" placeholder="Siglas" require></td>
-    <td><label>Nombre de curso: </label><input type="text" id="cur_Nombre" name="cur_Nombre" placeholder="Nombre de curso" require></td>
-  >    
+    <td><label>Nombre de curso: </label><input type="text" id="cur_Nombre" name="cur_Nombre" placeholder="Nombre de curso" require></td>  
 
     </select></td>                       
     <td><p>Carrera: <select id="car_Id" name="car_Id" >

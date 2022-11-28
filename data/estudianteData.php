@@ -93,6 +93,17 @@ class EstudianteData extends Data {
         
         return $sql->fetchAll(PDO::FETCH_ASSOC);
      }
+
+
+     public function reporteEstudiantePorCurso(){
+        $serverName = gethostname();
+        $conexion = new PDO("sqlsrv:server=$serverName;database=DB_AulaVirtual_UNA");
+
+        $sql = $conexion->prepare("EXEC sp_reporte_estudiantes_por_curso");
+        $sql->execute();
+        
+        return $sql->fetchAll(PDO::FETCH_ASSOC);
+     }
    
 
 }

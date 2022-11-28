@@ -21,7 +21,7 @@
     <title>Estudiantes</title>
 </head>
 <body>
-
+<h1>Registro de estudiantes</h1>
 <form onsubmit="return(validar());" method="POST"  id="estudianteForm" action="../business/estudianteAction.php">  
     <div class="table-responsive">  
     <table class="table table-bordered">       
@@ -120,31 +120,12 @@
                             echo '</form>';  
                   }                                      
                    ?>
-                   <tr>
-                 <td></td>
-                 <td>
-                   
-                     <?php
-                     if (isset($_GET['error'])) {
-                         if ($_GET['error'] == "emptyField") {
-                             echo '<p style="color: red">Campo(s) vacio(s)</p>';
-                             
-                         } else if ($_GET['error'] == "dbError") {
-                             echo '<center><p style="color: red">Error al procesar la transacción</p></center>';
-                             
-                         }
-                     } else if (isset($_GET['success'])) {
-                         echo '<p style="color: green">Transacción realizada</p>';
-                         echo '<br>';                         
-                        
-                     }
-                     ?>
-                 </td>
-             </tr>
                    </tbody> 
              </table>
+             
 
-             <br><br><br><br>
+             <br><BR></BR><hr><br><br><br>
+             <h1>Matricular estudiantes</h1>
              <form method="POST"  id="matriculaForm" action="../business/matriculaAction.php">  
     <div class="table-responsive">  
     <table class="table table-bordered"> 
@@ -174,7 +155,7 @@
 </table>  
 </div>  
 </form>
-
+<BR></BR>
 <table class="table table-striped table-bordered" >
                   <thead>
                     <tr>

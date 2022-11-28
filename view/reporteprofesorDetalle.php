@@ -21,7 +21,7 @@ include '../business/profesorBusiness.php';
     <title>Document</title>
 </head>
 <body>
- 
+<br><br>
 <table class="table table-striped table-bordered" >
     <thead>
     <tr>
