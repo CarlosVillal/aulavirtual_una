@@ -25,10 +25,8 @@
 </head>
 <body>
 
-
-    private $cur_est_Id;
 <h1>Area Evaluaciones</h1>
-<form onsubmit="return(validar());" method="POST"  id="estudianteForm" action="../business/calificacionAction.php">  
+<form onsubmit="return(validar());" method="POST"  id="calificacionForm" action="../business/calificacionAction.php">  
     <div class="table-responsive">  
     <table class="table table-bordered">       
       
@@ -44,31 +42,31 @@
     ?>
     </select></td>
     <td><label>Id: </label>
-    <input type="text" id="cal_Id" name="cal_Id" required></td>
+    <input type="number" id="cal_Id" name="cal_Id" required></td>
                             
     <td><label>Examen 1: </label>
-    <input type="text" id="cal_Examen1" name="cal_Examen1" required></td>
+    <input type="number" id="cal_Examen1" name="cal_Examen1" required></td>
 
     <td><label>Examen 2: </label>
-    <input type="text" id="cal_Examen2" name="cal_Examen2" required></td>
+    <input type="number" id="cal_Examen2" name="cal_Examen2" required></td>
                                   
     <td><label>Quiz 1: </label>
-    <input type="text" id="cal_Quiz1" name="cal_Quiz1" required></td>
+    <input type="number" id="cal_Quiz1" name="cal_Quiz1" required></td>
 
     <td><label>Quiz 2: </label>
-    <input type="date" id="cal_Quiz2" name="cal_Quiz2" required></td>
+    <input type="number" id="cal_Quiz2" name="cal_Quiz2" required></td>
                                         
     <td><label>Proyecto 1: </label>
-    <input type="text" id="cal_Proyecto1" name="cal_Proyecto1" required></td>
+    <input type="number" id="cal_Proyecto1" name="cal_Proyecto1" required></td>
 
     <td><label>Proyecto 1: </label>
-    <input type="text" id="cal_Proyecto1" name="cal_Proyecto1" required></td>
+    <input type="number" id="cal_Proyecto1" name="cal_Proyecto1" required></td>
 
 <td><label>Proyecto 2: </label>
-    <input type="text" id="cal_Proyecto2" name="cal_Proyecto2" required></td>
+    <input type="number" id="cal_Proyecto2" name="cal_Proyecto2" required></td>
 
     <td><label>Nota Final: </label>
-    <input type="text" id="cur_NotaFinal" name="cur_NotaFinal" required></td>
+    <input type="number" id="cur_NotaFinal" name="cur_NotaFinal" required></td>
 
 
   <td><input onclick="return confirm('Seguro que desea almacenar los datos?')" type="submit" value="Registrar" name="Insertar" id="Insertar"/> </td>
@@ -95,9 +93,9 @@
     <tbody>
 
     <?php
-    $cursoBusiness = new CursoBusiness();
-    $curso = $cursoBusiness -> obtener();
-    foreach ($curso as $row) {
+    $calificacionBusiness = new CalificacionBusiness();
+    $calificacion = $calificacionBusiness -> obtenerCalificacionEspecificaDeEstudiante("702540125");
+    foreach ($calificacion as $row) {
         echo '<form  method="post" enctype="multipart/form-data" action="../business/calificacionAction.php">';
         
         echo '<tr>';
