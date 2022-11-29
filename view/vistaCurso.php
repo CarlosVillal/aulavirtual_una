@@ -33,11 +33,11 @@
 
     </select></td>                       
     <td><p>Carrera: <select id="car_Id" name="car_Id" >
-    <option value="Ingeniería en Sistemas">Ingeniería en Sistemas</option>    
-    <option value="Mercadeo Internacional">Mercadeo Internacional</option>    
-    <option value="Administración">Administración</option>    
-    <option value="Administración de Oficinas">Administración de Oficinas</option>    
-    <option value="Inglés">Inglés</option>                           
+    <option value="3">Ingeniería en Sistemas</option>    
+    <option value="4">Mercadeo Internacional</option>    
+    <option value="5">Administración</option>    
+    <option value="6">Administración de Oficinas</option>    
+    <option value="7">Inglés</option>                           
   </select></td>
   
     </select></td>

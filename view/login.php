@@ -15,6 +15,7 @@
 </head>
 <body>
 
+
   <form method="post" enctype="multipart/form-data" action="../business/loginAction.php">
     <section class="vh-100 gradient-custom">
         <div class="container py-5 h-100">
@@ -62,5 +63,6 @@
         </div>
       </section>
     </form>
+
 </body>
 </html>
