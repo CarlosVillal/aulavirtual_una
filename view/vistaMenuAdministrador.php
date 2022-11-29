@@ -77,10 +77,10 @@
                   <thead>
                  
                     <br/>
-                    <button><a href="vistaOpcionesProfesor.php">Area Docente</a></button><br/>  
+                    <button><a href="vistaProfesor.php">Registro de Profes</a></button><br/>
+                    <button><a href="vistaOpcionesProfesor.php">Reportes de Profesores</a></button><br/>  
                     <button><a href="vistaestudiante.php">Area Estudiante</a></button><br/>   
-                    <button><a href="vistaCurso.php">Area Curso</a></button><br/>  
-                    <!-- <button><a href="vistaOpcionesProfesor.php">Opciones para profes</a></button><br/>   -->
+                    <button><a href="vistaCurso.php">Area Curso</a></button><br/> 
             
 
                     <td><button onclick="return confirm('Seguro que desea generar un resplado de los datos?')" type="button" name="Respaldar" id="Respaldar">Generar Respaldo</button></td>

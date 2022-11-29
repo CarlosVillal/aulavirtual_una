@@ -29,7 +29,6 @@
 <div>
     <form>
     <select id="opcion" >
-        <option value="registraProfesor">Registro de Profesores</option>
         <option value="reporteDetalle">Reportes en Detalle de Profesores</option>
         <option value="reporteEspecifico">Reportes en Especifico de Profesores</option>
     </select>

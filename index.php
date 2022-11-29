@@ -19,9 +19,10 @@
 <br><br>
 <form action="login.thml">
     
-<td> <img src="static/image/1.png"><a href="view/vistaMenuAdministrador.php">Aula Virtual Administrador</a></button></td>
-<td> <img src="static/image/2.png"><a href="view/vistaMenuEstudiante.php">Aula Virtual Estudiante</a></button></td>
-<td> <img src="static/image/3.png"><a href="view/vistaMenuProfesor.php">Aula Virtual Profesor</a></button></td>
+<!-- <td> <img src="static/image/1.png"><a href="view/vistaMenuAdministrador.php">Aula Virtual Administrador</a></button></td> -->
+<td> <img src="static/image/1.png"><a href="view/login.php">Aula Virtual Administrador</a></button></td>
+<td> <img src="static/image/2.png"><a href="view/login.php">Aula Virtual Estudiante</a></button></td>
+<td> <img src="static/image/3.png"><a href="view/login.php">Aula Virtual Profesor</a></button></td>
 
 </form>
     </table>

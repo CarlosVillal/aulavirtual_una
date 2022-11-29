@@ -27,8 +27,16 @@ class EstudianteData extends Data {
         $sql->bindParam(6,$est_TipoBeca , PDO::PARAM_STR);
         $sql->bindParam(7,$est_FechaNacimiento , PDO::PARAM_STR);
         $sql->bindParam(8,$est_Carrera , PDO::PARAM_STR);
-
         $resultado= $sql->execute();
+
+   $contrasenia = "$est_Cedula$est_Nombre";
+    $dat = "Estudiante";
+
+    $sql2 = $conexion->prepare("EXEC sp_insertar_login ?, ?, ?");
+    $sql2->bindParam(1,$est_Cedula , PDO::PARAM_STR);
+    $sql2->bindParam(2,$contrasenia , PDO::PARAM_STR);
+    $sql2->bindParam(3,$dat , PDO::PARAM_STR);
+    $resultado= $sql2->execute();
 
         return $resultado;
         }
