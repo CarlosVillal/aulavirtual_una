@@ -19,7 +19,6 @@ class ProfesorData extends Data {
     $pro_Sexo = $profesor->getpro_Sexo();
     $pro_GradoAcademico = $profesor->getpro_GradoAcademico();
     $pro_AniosExperiencia = $profesor->getpro_AniosExperiencia();
-
    
     $sql = $conexion->prepare("EXEC sp_insertar_Profesor ?, ?, ?, ?, ?, ?, ?, ?");
     $sql->bindParam(1,$pro_Cedula , PDO::PARAM_STR);
@@ -31,6 +30,15 @@ class ProfesorData extends Data {
     $sql->bindParam(7,$pro_GradoAcademico , PDO::PARAM_STR);
     $sql->bindParam(8,$pro_AniosExperiencia , PDO::PARAM_INT);
     $resultado= $sql->execute();
+
+    $contrasenia = "$pro_Cedula$pro_Nombre";
+    $dat = "Profesor";
+
+    $sql2 = $conexion->prepare("EXEC sp_insertar_login ?, ?, ?");
+    $sql2->bindParam(1,$pro_Cedula , PDO::PARAM_STR);
+    $sql2->bindParam(2,$contrasenia , PDO::PARAM_STR);
+    $sql2->bindParam(3,$dat , PDO::PARAM_STR);
+    $resultado= $sql2->execute();
     
     return $resultado;
     }
