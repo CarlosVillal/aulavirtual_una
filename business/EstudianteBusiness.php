@@ -34,4 +34,12 @@ class EstudianteBusiness{
         return $this->estudianteData->reporteEstudiantePorCurso();
     }
 
+    public function getCursosMatriculados($est_Cedula) {
+        return $this->estudianteData->getCursosMatriculados($est_Cedula);
+    }
+
+    public function getHistoricoCursosMatriculados($est_Cedula) {
+        return $this->estudianteData->getHistoricoCursosMatriculados($est_Cedula);
+    }
+
 }

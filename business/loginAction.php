@@ -4,8 +4,8 @@ include 'loginBusiness.php';
 
 if(isset($_POST['Ingresar'])){
 
-    $cedula = $_POST['cedula'];
-    $contrasenia = $_POST['contrasenia'];
+$cedula = $_POST['cedula'];
+$contrasenia = $_POST['contrasenia'];
  
  $loginBusiness = new LoginBusiness();
  $resultado = $loginBusiness->ingresar($cedula, $contrasenia);

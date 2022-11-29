@@ -84,10 +84,9 @@
                    </tbody>
  
              </table>
-
-            <?php
-            echo '</br></br><td><button name="Volver" id="volver"><a href="../">Volver</a></button></td><br>';
-            ?>
+            </br></br>
+            <button name="Volver"><a href="../view/vistaMenuEstudiante.php">Volver</a></button>
+            
 
 
 

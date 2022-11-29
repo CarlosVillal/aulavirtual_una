@@ -45,11 +45,11 @@
     <input type="text" id="est_direccion" name="est_direccion" required></td>
 
     <td><label>Carrera: </label><select name="est_Carrera" id="est_Carrera">
-      <option value="Ingeniería en Sistemas">Ingeniería en Sistemas</option>
-      <option value="Mercadeo Internacional">Mercadeo Internacional</option>
-      <option value="Administración">Administración</option>
-      <option value="Administración de Oficinas">Administración de Oficinas</option>
-      <option value="Inglés">Inglés</option>
+      <option value="3">Ingeniería en Sistemas</option>
+      <option value="4">Mercadeo Internacional</option>
+      <option value="5">Administración</option>
+      <option value="6">Administración de Oficinas</option>
+      <option value="7">Inglés</option>
     </select></td>
                                   
     <td><p>Tipo de beca: <select id="est_TipoBeca" name="est_TipoBeca" required >
@@ -98,11 +98,11 @@
                    
                     echo '<td><select name="est_Carrera" id="est_Carrera">
                       <option value="'. $row['est_Carrera'] .'">'. $row['est_Carrera'] .'</option>
-                      <option value="Ingeniería en Sistemas">Ingeniería en Sistemas</option>
-                      <option value="Mercadeo Internacional">Mercadeo Internacional</option>
-                      <option value="Administración">Administración</option>
-                      <option value="Administración de Oficinas">Administración de Oficinas</option>
-                      <option value="Inglés">Inglés</option>
+                      <option value="3">Ingeniería en Sistemas</option>
+                      <option value="4">Mercadeo Internacional</option>
+                      <option value="5">Administración</option>
+                      <option value="6">Administración de Oficinas</option>
+                      <option value="7">Inglés</option>
                     </select></td>';
 
                     echo '<td><select name="est_TipoBeca" id="est_TipoBeca">

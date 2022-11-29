@@ -13,6 +13,9 @@ class LoginBusiness{
        return $this->loginData->ingresar($cedula, $contrasenia);
     }  
     
+    public function getLoginActivo() {
+        return $this->loginData->getLoginActivo();
+     } 
     
 }
 

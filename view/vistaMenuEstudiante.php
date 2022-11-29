@@ -4,7 +4,6 @@
 ?>
 
 <!DOCTYPE html>
-
 <style>
         body {
             text-align: left;
@@ -68,13 +67,10 @@
 <body>
 <h1>Menú Estudiante<h1>
 
-
-
-
                   <thead>
                    
                     <br> 
-                    <button><a href="vistaCurso.php">Ver Cursos Inscritos</a></button><br>  
+                    <button><a href="vistaVerCursoInscritoEst.php">Ver Cursos Inscritos</a></button><br>  
                     <button><a href="vistaEntregarTrabajos.php">Entregar Evaluaciones</a></button><br>  
                     <button><a href="view/vistaAdministrador.php">Ver Notas Parciales y Finales</a></button><br>   
                     <button><a href="vistaHistoricoEstudiante.php">Ver Histórico De Cursos</a></button><br>   
@@ -86,9 +82,7 @@
               
                    <tr>
                  <td></td>
-                 <td>
-                  
-
+                 <td>             
 
                    </tbody>
  
