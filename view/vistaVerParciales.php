@@ -24,6 +24,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 <body>
+
+<?php
+  $cedula = "";
+  $tipoUsuario = "";
+    $loginBusiness = new LoginBusiness();
+    $login = $loginBusiness -> getLoginActivo();
+    foreach ($login as $row) {
+        echo '<td><input type="hidden" name="log_act_CedulaUsuario" value="'. $row['log_act_CedulaUsuario'] .'"/></td>';
+        echo '<td><input type="hidden" name="log_act_TipoUsuario" value="'. $row['log_act_TipoUsuario'] .'"/></td>';
+        $cedula = $row['log_act_CedulaUsuario'];
+        $tipoUsuario = $row['log_act_TipoUsuario'];
+    }
+?>
+
 <?php 
  
    ?>
@@ -61,7 +75,7 @@
 
     <?php
     $calificacionBusiness = new CalificacionBusiness();
-    $calificacion = $calificacionBusiness -> obtenerCalificacionEspecificaDeEstudiante("700");
+    $calificacion = $calificacionBusiness -> obtenerCalificacionEspecificaDeEstudiante($cedula);
     foreach ($calificacion as $row) {
         echo '<form  method="post" enctype="multipart/form-data" action="../business/calificacionAction.php">';
         echo '<input type="hidden" name="cal_Id" value="'. $row['cal_Id'].'">';
