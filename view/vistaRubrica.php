@@ -124,8 +124,6 @@
                      ?>
                  </td>
              </tr>
-                   </tbody> 
-             </table>
 <br><br>
             <?php
             echo '</br></br><td><button name="Volver" id="volver"><a href="../">Volver</a></button></td><br>';

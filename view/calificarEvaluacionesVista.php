@@ -109,6 +109,7 @@
         echo '<td><input type="text" name="cal_Examen2" value="'. $row['cur_NotaFinal'].'"/></td>';
         echo '<td><select name="cur_est_Id"'. $row['cur_est_Id'].'"/></td>';
     ?>   
+
         <td><input type="submit" value="Actualizar" name="Actualizar" id="Actualizar" onclick="return confirm('Seguro que desea guardar los cambios?')" />
         <input type="submit" value="Eliminar" name="Eliminar" id="Eliminar" onclick="return confirm('Seguro que desea eliminar el registro?')" /></td>
     
@@ -126,6 +127,49 @@
         echo '<p style="color: green">Transacción realizada</p>';
         echo '<br>';
 }}
+
+
+    $calificacionBusiness = new CalificacionBusiness();
+    $calificacion = $calificacionBusiness -> obtenerCalificacionEspecificaDeEstudiante("702540125");
+    foreach ($calificacion as $row) {
+        echo '<form  method="post" enctype="multipart/form-data" action="../business/calificacionAction.php">';
+        
+        echo '<tr>';
+        echo '<td><input type="text" readonly name="cal_Id" value="'. $row['cal_Id'].'"/></td>';
+        echo '<td><input type="text" name="cal_Examen1" value="'. $row['cal_Examen1'].'"/></td>';
+        echo '<td><input type="text" name="cal_Examen2" value="'. $row['cal_Examen2'].'"/></td>';
+        echo '<td><input type="text" name="cal_Examen2" value="'. $row['cal_Quiz1'].'"/></td>';
+        echo '<td><input type="text" name="cal_Examen2" value="'. $row['cal_Quiz2'].'"/></td>';
+        echo '<td><input type="text" name="cal_Examen2" value="'. $row['cal_Proyecto1'].'"/></td>';
+        echo '<td><input type="text" name="cal_Examen2" value="'. $row['cal_Proyecto2'].'"/></td>';
+        echo '<td><input type="text" name="cal_Examen2" value="'. $row['cur_NotaFinal'].'"/></td>';
+        echo '<td><select name="cur_est_Id"'. $row['cur_est_Id'].'"/></td>';
+    ?>   
+
+        <td><input type="submit" value="Actualizar" name="Actualizar" id="Actualizar" onclick="return confirm('Seguro que desea guardar los cambios?')" />
+        <input type="submit" value="Eliminar" name="Eliminar" id="Eliminar" onclick="return confirm('Seguro que desea eliminar el registro?')" /></td>
+    
+      
+<tr>
+<td>
+    <?php
+    if (isset($_GET['error'])) {
+    if ($_GET['error'] == "emptyField") {
+        echo '<p style="color: red">Campo(s) vacio(s)</p>';
+    } else if ($_GET['error'] == "dbError") {
+        echo '<center><p style="color: red">Error al procesar la transacción</p></center>';
+}
+    } else if (isset($_GET['success'])) {
+        echo '<p style="color: green">Transacción realizada</p>';
+        echo '<br>';
+}}
+
+
+
+
+
+
+
     ?>
     </td>
     </tr>

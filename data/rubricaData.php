@@ -1,5 +1,4 @@
 <?php
-
 include_once 'data.php';
 include '../domain/rubrica.php';
 
@@ -17,7 +16,6 @@ class RubricaData extends Data {
     $rub_Proyecto1 = $Rubrica->getrub_Proyecto1();
     $rub_Proyecto2 = $Rubrica->getrub_Proyecto2();
     $cur_Sigla = $Rubrica->getcur_Sigla();
-
 
     $sql = $conexion->prepare("EXEC sp_insertar_Rubrica ?, ?, ?, ?, ?, ?, ?, ?");
     $sql->bindParam(1,$rub_Id , PDO::PARAM_INT);
