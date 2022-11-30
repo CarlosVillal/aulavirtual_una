@@ -10,9 +10,15 @@ if(isset($_POST['Insertar'])){
  $rub_Quiz2 = $_POST['rub_Quiz2'];
  $rub_Proyecto1 = $_POST['rub_Proyecto1'];
  $rub_Proyecto2 = $_POST['rub_Proyecto2'];
- $cur_Sigla = $_POST['cur_Sigla'];
+ $cur_Sigla = $_POST['curso'];
+
  
-    $rubricas = new Rubrica($rub_Id,$rub_Examen1,$rub_Examen2, $rub_Quiz1, $rub_Quiz2, $rub_Proyecto1,$rub_Proyecto2, $cur_Sigla);
+    $rubricas = new Rubrica($rub_Id,$rub_Examen1,$rub_Examen2, $rub_Quiz1, 
+    $rub_Quiz2, $rub_Proyecto1,$rub_Proyecto2, $cur_Sigla);
+
+$nota = $rub_Examen1 + $rub_Examen2 + $rub_Quiz1 + $rub_Quiz2 + $rub_Proyecto1 + $rub_Proyecto2;
+ if($nota == 100){
+
     $rubricaBusiness = new RubricaBusiness();
     $resultado = $rubricaBusiness->insertar($rubricas);
  
@@ -21,7 +27,9 @@ if(isset($_POST['Insertar'])){
      }else{
          Header("Location: ../view/vistaRubrica.php?error=dbError");
      }
-
+    }else{
+        Header("Location: ../view/vistaRubrica.php?error=dbError");
+    }
 
     }
 

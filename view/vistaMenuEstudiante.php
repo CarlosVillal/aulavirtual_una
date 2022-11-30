@@ -89,7 +89,7 @@
        
 
             <?php
-            echo '</br><td><button name="Volver" id="volver"><a href="../">Volver</a></button></td><br>';
+            echo '</br><td><button name="Volver" id="volver"><a href="../">SALIR</a></button></td><br>';
             ?>
 
 

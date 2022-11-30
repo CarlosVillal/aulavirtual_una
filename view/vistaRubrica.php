@@ -21,7 +21,7 @@
 </head>
 <body>
 <h1>Crear Rubrica</h1>
-<form method="POST"  id="rubricaForm" action="../business/rubricaAction.php">  
+<form method="POST" enctype="multipart/form-data" id="rubricaForm" action="../business/rubricaAction.php">  
     <div class="table-responsive">  
     <table class="table table-bordered">       
 
@@ -53,13 +53,13 @@
     $cursobusiness = new Cursobusiness();
     $curso = $cursobusiness->obtener();
     foreach ($curso as $row) {                                
-        echo '<option value="'. $row['cur_Sigla'] .'-">'. $row['cur_Sigla'] .'</option>';                                
+        echo '<option value="'. $row['cur_Sigla'] .'">'. $row['cur_Sigla'] .'</option>';                                
     }
     ?>
     </select></td>
 
   <td><input onclick="return confirm('Seguro que desea almacenar los datos?')" type="submit" value="Registrar" name="Insertar" id="Insertar"/> </td>
-  </table>      
+</table>      
   </div>  
  </form>  
 <br><br><br>
@@ -113,7 +113,7 @@
                              echo '<p style="color: red">Campo(s) vacio(s)</p>';
                              
                          } else if ($_GET['error'] == "dbError") {
-                             echo '<center><p style="color: red">Error al procesar la transacción</p></center>';
+                             echo '<center><p style="color: red">Error, los valores de la rubrica deben ser iguales a 100!!</p></center>';
                              
                          }
                      } else if (isset($_GET['success'])) {
@@ -128,7 +128,7 @@
              </table>
 <br><br>
             <?php
-            echo '</br></br><td><button name="Volver" id="volver"><a href="../">Volver</a></button></td><br>';
+            echo '</br></br><td><button name="Volver" id="volver"><a href="../view/vistaMenuProfesor.php">Volver</a></button></td><br>';
             ?>
 
 </body>

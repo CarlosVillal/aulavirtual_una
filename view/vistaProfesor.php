@@ -5,6 +5,16 @@
 ?>
 
 <!DOCTYPE html>
+<style>
+        body {
+            text-align: left;
+            margin: 0;
+            padding: 0;
+            font: normal 15px arial, helvetica, sans-serif;
+            background: #AED6F1;
+
+        }
+        </style>
 <html>
 <head>
 	<title>Profesores</title>
@@ -13,6 +23,9 @@
   <script type="text/javascript" src="../static/js/funciones.js" ></script>
 </head>
 <body>
+    <h1>Registro de Profesores</h1>
+    <hr>
+    <br><br>
 
 	 <form method="POST"  id="creditoForm" action="../business/profesorAction.php">  
     <div class="table-responsive">  
@@ -38,6 +51,7 @@
 </div>  
 </form>  
 <br><br>
+<hr><br><br>
     <table class="table table-striped table-bordered" >
     <thead>
     <tr>

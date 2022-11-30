@@ -5,6 +5,7 @@ include 'matriculaBusiness.php';
 if(isset($_POST['Insertar'])){ 
  $cur_Sigla = $_POST['cur_Sigla'];
  $est_Cedula = $_POST['est_Cedula'];
+ $ruta = $_POST['ruta'];
  
  $matricula = new Matricula(0, $cur_Sigla, $est_Cedula);
  
@@ -12,9 +13,9 @@ if(isset($_POST['Insertar'])){
  $resultado = $matriculaBusiness->insertar($matricula);
  
     if($resultado == 1){
-         Header("Location: ../view/vistaestudiante.php?success=inserted");
+         Header("Location: $ruta?success=inserted");
      }else{
-         Header("Location: ../view/vistaestudiante.php?error=dbError");
+         Header("Location: $ruta?error=dbError");
      }
 
     }

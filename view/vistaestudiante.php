@@ -148,7 +148,7 @@
     }
     ?>
     </select></td>
-    
+    <input type="hidden" name="ruta" value="../view/vistaestudiante.php" >
     <td><input type="submit" onclick="return confirm('Seguro que desea almacenar los datos?')" value="Matricular" id="Insertar" name="Insertar"/></td>
 
  
@@ -168,7 +168,6 @@
                    $matriculaBusiness = new MatriculaBusiness();
                   $matricula = $matriculaBusiness->obtener();
                    foreach ($matricula as $row) {
-
                     echo '<form  method="post" enctype="multipart/form-data" action="../business/matriculaAction.php">';
                     echo '<input type="hidden" name="cur_est_Id" value="'. $row['cur_est_Id'] .'">';
                     echo '<tr>';
@@ -206,7 +205,6 @@
              </tr>
                    </tbody> 
              </table>
-<br><br>
             <?php
             echo '</br></br><td><button name="Volver" id="volver"><a href="../">Volver</a></button></td><br>';
             ?>
