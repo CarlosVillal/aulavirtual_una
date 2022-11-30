@@ -20,7 +20,7 @@ class CalificacionData extends Data {
         $cur_NotaFinal = $Calificacion->getcur_NotaFinal();
         $cur_est_Id = $Calificacion->getcur_est_Id();
        
-        $sql = $conexion->prepare("EXEC sp_insertar_Calificacion ?, ?, ?, ?, ?, ?, ?, ?");
+        $sql = $conexion->prepare("EXEC sp_insertar_Calificacion ?, ?, ?, ?, ?, ?, ?, ?, ?");
         $sql->bindParam(1,$cal_Id , PDO::PARAM_INT);
         $sql->bindParam(2,$cal_Examen1 , PDO::PARAM_INT);
         $sql->bindParam(3,$cal_Examen2 , PDO::PARAM_INT);
@@ -29,7 +29,7 @@ class CalificacionData extends Data {
         $sql->bindParam(6,$cal_Proyecto1 , PDO::PARAM_INT);
         $sql->bindParam(7,$cal_Proyecto2 , PDO::PARAM_INT);
         $sql->bindParam(8,$cur_NotaFinal , PDO::PARAM_INT);
-        $sql->bindParam(8,$cur_est_Id , PDO::PARAM_INT);
+        $sql->bindParam(9,$cur_est_Id , PDO::PARAM_STR);
         $resultado= $sql->execute();
 
         return $resultado;
@@ -53,6 +53,7 @@ class CalificacionData extends Data {
         $conexion = new PDO("sqlsrv:server=$serverName;database=DB_AulaVirtual_UNA");
 
         
+       
         $cal_Id = $Calificacion->getcal_Id();
         $cal_Examen1 = $Calificacion->getcal_Examen1();
         $cal_Examen2 = $Calificacion->getcal_Examen2();
@@ -64,8 +65,8 @@ class CalificacionData extends Data {
         $cur_est_Id = $Calificacion->getcur_est_Id();
 
 
-        $sql = $conexion->prepare("EXEC sp_actualizar_Calificacion ?, ?, ?, ?, ?, ?, ?, ?");
-         $sql->bindParam(1,$cal_Id , PDO::PARAM_INT);
+        $sql = $conexion->prepare("EXEC sp_actualizar_Calificacion ?, ?, ?, ?, ?, ?, ?, ?, ?");
+        $sql->bindParam(1,$cal_Id , PDO::PARAM_INT);
         $sql->bindParam(2,$cal_Examen1 , PDO::PARAM_INT);
         $sql->bindParam(3,$cal_Examen2 , PDO::PARAM_INT);
         $sql->bindParam(4,$cal_Quiz1 , PDO::PARAM_INT);
@@ -73,20 +74,19 @@ class CalificacionData extends Data {
         $sql->bindParam(6,$cal_Proyecto1 , PDO::PARAM_INT);
         $sql->bindParam(7,$cal_Proyecto2 , PDO::PARAM_INT);
         $sql->bindParam(8,$cur_NotaFinal , PDO::PARAM_INT);
-        $sql->bindParam(8,$cur_est_Id , PDO::PARAM_INT);
-
+        $sql->bindParam(9,$cur_est_Id , PDO::PARAM_STR);
         $resultado= $sql->execute();
 
         return $resultado;
     }
 
 
-     public function getCalificacionEspecifica(){
+     public function getCalificacionEspecifica($cur_est_Id){
         $serverName = gethostname();
         $conexion = new PDO("sqlsrv:server=$serverName;database=DB_AulaVirtual_UNA");
 
-        $sql = $conexion->prepare("EXEC sp_ver_calificacion");
-        $sql->bindParam(1, $est_Cedula , PDO::PARAM_STR);
+        $sql = $conexion->prepare("EXEC sp_ver_calificacion_especifica ?");
+        $sql->bindParam(1, $cur_est_Id , PDO::PARAM_STR);
         $sql->execute();
         
         return $sql->fetchAll(PDO::FETCH_ASSOC);

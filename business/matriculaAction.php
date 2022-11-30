@@ -1,6 +1,6 @@
 <?php
 include 'matriculaBusiness.php';
-
+include 'calificacionBusiness.php';
 
 if(isset($_POST['Insertar'])){ 
  $cur_Sigla = $_POST['cur_Sigla'];
@@ -11,7 +11,13 @@ if(isset($_POST['Insertar'])){
  
  $matriculaBusiness = new MatriculaBusiness();
  $resultado = $matriculaBusiness->insertar($matricula);
- 
+
+ $calificacion = new Calificacion(0,0,0,0,0,0,0,0,$est_Cedula);
+ $calificacionBusiness = new CalificacionBusiness();
+ $resultado = $calificacionBusiness->insertar($calificacion);
+
+
+
     if($resultado == 1){
          Header("Location: $ruta?success=inserted");
      }else{

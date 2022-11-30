@@ -15,15 +15,15 @@ class CalificacionBusiness{
 
    
    public function update($Calificacion) {
-       return $this->calificacionData->updateCalificacion($Carrera);
+       return $this->calificacionData->updateCalificacion($Calificacion);
    }
 
     public function delete($id) {
        return $this->calificacionData->deleteCalificacion($id);
     }
 
-   public function obtenerCalificacionEspecificaDeEstudiante() {
-       return $this->calificacionData->getCalificacionEspecifica();
+   public function obtenerCalificacionEspecificaDeEstudiante($cur_est_Id) {
+       return $this->calificacionData->getCalificacionEspecifica($cur_est_Id);
     }
 
   
