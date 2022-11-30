@@ -72,7 +72,7 @@
                     <br> 
                     <button><a href="vistaVerCursoInscritoEst.php">Ver Cursos Inscritos</a></button><br>  
                     <button><a href="vistaEntregarTrabajos.php">Entregar Evaluaciones</a></button><br>  
-                    <button><a href="view/vistaAdministrador.php">Ver Notas Parciales y Finales</a></button><br>   
+                    <button><a href="vistaVerParciales.php">Ver Notas Parciales y Finales</a></button><br>   
                     <button><a href="vistaHistoricoEstudiante.php">Ver Histórico De Cursos</a></button><br>   
                     <button><a href="vistaMiPerfil.php">Ver Perfil</a></button><br><br>    
                                   

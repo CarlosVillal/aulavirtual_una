@@ -13,7 +13,7 @@
 <head>
 </body>
 <br>
-<form action="subearchivo.php" method="post" enctype="multipart/form-data">
+<form action="../view/vistaMenuEstudiante.php" method="post" enctype="multipart/form-data">
     <b>Nombre de trabajo:</b> 
     <br>
     <input type="text" name="cadenatexto" size="20" maxlength="100">

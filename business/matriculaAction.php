@@ -12,7 +12,7 @@ if(isset($_POST['Insertar'])){
  $matriculaBusiness = new MatriculaBusiness();
  $resultado = $matriculaBusiness->insertar($matricula);
 
- $calificacion = new Calificacion(0,0,0,0,0,0,0,0,$est_Cedula);
+ $calificacion = new Calificacion(0,0,0,0,0,0,0,0,$cur_Sigla,$est_Cedula);
  $calificacionBusiness = new CalificacionBusiness();
  $resultado = $calificacionBusiness->insertar($calificacion);
 

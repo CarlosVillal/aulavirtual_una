@@ -18,9 +18,10 @@ class CalificacionData extends Data {
         $cal_Proyecto1 = $Calificacion->getcal_Proyecto1();
         $cal_Proyecto2 = $Calificacion->getcal_Proyecto2();
         $cur_NotaFinal = $Calificacion->getcur_NotaFinal();
+        $cur_Sigla = $Calificacion->getcur_Sigla();
         $cur_est_Id = $Calificacion->getcur_est_Id();
        
-        $sql = $conexion->prepare("EXEC sp_insertar_Calificacion ?, ?, ?, ?, ?, ?, ?, ?, ?");
+        $sql = $conexion->prepare("EXEC sp_insertar_Calificacion ?, ?, ?, ?, ?, ?, ?, ?, ?, ?");
         $sql->bindParam(1,$cal_Id , PDO::PARAM_INT);
         $sql->bindParam(2,$cal_Examen1 , PDO::PARAM_INT);
         $sql->bindParam(3,$cal_Examen2 , PDO::PARAM_INT);
@@ -29,7 +30,8 @@ class CalificacionData extends Data {
         $sql->bindParam(6,$cal_Proyecto1 , PDO::PARAM_INT);
         $sql->bindParam(7,$cal_Proyecto2 , PDO::PARAM_INT);
         $sql->bindParam(8,$cur_NotaFinal , PDO::PARAM_INT);
-        $sql->bindParam(9,$cur_est_Id , PDO::PARAM_STR);
+        $sql->bindParam(9,$cur_Sigla , PDO::PARAM_STR);
+        $sql->bindParam(10,$cur_est_Id , PDO::PARAM_STR);
         $resultado= $sql->execute();
 
         return $resultado;
@@ -62,10 +64,11 @@ class CalificacionData extends Data {
         $cal_Proyecto1 = $Calificacion->getcal_Proyecto1();
         $cal_Proyecto2 = $Calificacion->getcal_Proyecto2();
         $cur_NotaFinal = $Calificacion->getcur_NotaFinal();
+        $cur_Sigla = $Calificacion->getcur_Sigla();
         $cur_est_Id = $Calificacion->getcur_est_Id();
 
 
-        $sql = $conexion->prepare("EXEC sp_actualizar_Calificacion ?, ?, ?, ?, ?, ?, ?, ?, ?");
+        $sql = $conexion->prepare("EXEC sp_actualizar_Calificacion ?, ?, ?, ?, ?, ?, ?, ?, ?, ?");
         $sql->bindParam(1,$cal_Id , PDO::PARAM_INT);
         $sql->bindParam(2,$cal_Examen1 , PDO::PARAM_INT);
         $sql->bindParam(3,$cal_Examen2 , PDO::PARAM_INT);
@@ -74,7 +77,8 @@ class CalificacionData extends Data {
         $sql->bindParam(6,$cal_Proyecto1 , PDO::PARAM_INT);
         $sql->bindParam(7,$cal_Proyecto2 , PDO::PARAM_INT);
         $sql->bindParam(8,$cur_NotaFinal , PDO::PARAM_INT);
-        $sql->bindParam(9,$cur_est_Id , PDO::PARAM_STR);
+        $sql->bindParam(9,$cur_Sigla , PDO::PARAM_STR);
+        $sql->bindParam(10,$cur_est_Id , PDO::PARAM_STR);
         $resultado= $sql->execute();
 
         return $resultado;
