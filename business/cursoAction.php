@@ -24,6 +24,7 @@ if(isset($_POST['Insertar'])){
      }
 }
 
+
 if(isset($_POST['InsertarHistorico'])){
 
     $cur_Sigla = $_POST['cur_Sigla'];
@@ -73,28 +74,28 @@ if(isset($_POST['Actualizar'])){
     $cur_Vigencia = $_POST['cur_Vigencia'];
     $car_Id = $_POST['car_Id'];
     $pro_Cedula = $_POST['pro_Cedula'];
-    $his_Nota="100";
-    $est_Cedula="702540125";
+    $his_Nota = "100";
+    $cedulaActiva = $_POST['cedulaActiva'];
+
 if($cur_Vigencia=="Finalizado"){
 
-    $historico = new HistoricoEstudiante($cur_Sigla, $cur_Nombre, $cur_CantidadCupos, $cur_Vigencia ,$his_Nota,
-    $car_Id, $est_Cedula);
+    $historico = new HistoricoEstudiante($cur_Sigla, $cur_Nombre, 
+    $cur_CantidadCupos, $cur_Vigencia ,$his_Nota, $car_Id, $cedulaActiva);
+
     $historicoBusiness = new HistoricoBusiness();
     $resultado = $historicoBusiness->insertarHistorico_Estudiante($historico);
 
-
-    $historico = new Historico($cur_Sigla, $cur_Nombre, $cur_CantidadCupos, $cur_Vigencia,
+    $historico2 = new Historico($cur_Sigla, $cur_Nombre, $cur_CantidadCupos, $cur_Vigencia,
     $car_Id, $pro_Cedula);
- $historicoBusiness = new HistoricoBusiness();
- $resultado = $historicoBusiness->insertarHistorico_Profesor($historico);
+    
+    $historicoBusiness = new HistoricoBusiness();
+    $resultado = $historicoBusiness->insertarHistorico_Profesor($historico2);
 
+    $curso = new Curso($cur_Sigla, $cur_Nombre, $cur_CantidadCupos, $cur_Vigencia,
+    $car_Id, $pro_Cedula);
 
-
-$curso = new Curso($cur_Sigla, $cur_Nombre, $cur_CantidadCupos, $cur_Vigencia,
-$car_Id, $pro_Cedula);
-
-$cursoBusiness = new CursoBusiness();
-$resultado = $cursoBusiness->update($curso);
+    $cursoBusiness = new CursoBusiness();
+    $resultado = $cursoBusiness->update($curso);
 
 }else{
 
@@ -109,6 +110,7 @@ $resultado = $cursoBusiness->update($curso);
     }else{
         Header("Location: ../view/vistaCurso.php?error=dbError");
     }
+
 }
 
 

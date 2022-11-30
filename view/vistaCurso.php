@@ -33,12 +33,11 @@ $tipoUsuario = "";
     $login = $loginBusiness -> getLoginActivo();
     foreach ($login as $row) {
         echo '<td><input type="hidden" name="log_act_CedulaUsuario" value="'. $row['log_act_CedulaUsuario'] .'"/></td>';
-        echo '<td><input type="hidden" name="log_act_Contrasenia" value="'. $row['log_act_Contrasenia'] .'"/></td>';
         echo '<td><input type="hidden" name="log_act_TipoUsuario" value="'. $row['log_act_TipoUsuario'] .'"/></td>';
         $cedula = $row['log_act_CedulaUsuario'];
         $tipoUsuario = $row['log_act_TipoUsuario'];
-    }
-?>
+ }
+        ?>
 
 <h1>Registro de Cursos</h1>
 <head><br><br></head>
@@ -107,8 +106,9 @@ $tipoUsuario = "";
         </select></td>';
         echo '<td><input type="text" name="car_Id" value="'. $row['car_Id'].'"/></td>';
         echo '<td><input type="text" name="pro_Cedula" value="'. $row['pro_Cedula'].'"/></td>';
-    ?>   
-        <td><input type="submit" value="Actualizar" name="Actualizar" id="Actualizar" onclick="return confirm('Seguro que desea guardar los cambios?')" />
+        
+       echo '<input type="hidden" name="cedulaActiva" value="'. $cedula .'">';
+       ?> <td><input type="submit" value="Actualizar" name="Actualizar" id="Actualizar" onclick="return confirm('Seguro que desea guardar los cambios?')" />
         <input type="submit" value="Eliminar" name="Eliminar" id="Eliminar" onclick="return confirm('Seguro que desea eliminar el registro?')" /></td>
         <?php } ?>
        </form>

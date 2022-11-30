@@ -32,7 +32,7 @@
         $cedula = $row['log_act_CedulaUsuario'];
         $tipoUsuario = $row['log_act_TipoUsuario'];
     }
-    ?>
+?>
 
 <table class="table table-striped table-bordered" >
                   <thead>
