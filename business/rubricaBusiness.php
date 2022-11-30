@@ -1,5 +1,4 @@
 <?php
-
 include '../data/rubricaData.php';
 
 class RubricaBusiness{

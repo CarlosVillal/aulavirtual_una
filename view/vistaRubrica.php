@@ -48,7 +48,7 @@
     <input type="number" id="rub_Proyecto2" name="rub_Proyecto2" ></td>
 
     
-    <td><label>Curso: </label><select name="curso" id="curso">
+    <td><label>Curso: </label><select name="cur_Sigla" id="cur_Sigla">
     <?php
     $cursobusiness = new Cursobusiness();
     $curso = $cursobusiness->obtener();
@@ -91,10 +91,10 @@
                     echo '<td><input type="text" id="rub_Examen1" name="rub_Examen1"  value="'. $row['rub_Examen1'] . '"/></td>';
                     echo '<td><input type="text" id="rub_Examen2" name="rub_Examen2" value="'. $row['rub_Examen2'] . '"/></td>';
                     echo '<td><input type="text" name="rub_Quiz1" id="rub_Quiz1" value="'. $row['rub_Quiz1'] . '"/></td>';
-                    echo '<td><input type="text" name="rub_Quiz2" value="'. $row['rub_Quiz2'] . '"/></td>';
+                    echo '<td><input type="text" name="rub_Quiz2" id="rub_Quiz2" value="'. $row['rub_Quiz2'] . '"/></td>';
                     echo '<td><input type="text" name="rub_Proyecto1" id="rub_Proyecto1" value="'. $row['rub_Proyecto1'] . '"/></td>'; 
                     echo '<td><input type="text" name="rub_Proyecto2" id="rub_Proyecto2" value="'. $row['rub_Proyecto2'] . '"/></td>'; 
-                    echo '<td><input type="text" name="curso" id="curso" value="'. $row['cur_Sigla'] . '"/></td>'; 
+                    echo '<td><input type="text" name="cur_Sigla" id="cur_Sigla" value="'. $row['cur_Sigla'] . '"/></td>'; 
                     
                          ?> 
                             <td><input type="submit" value="Actualizar" name="Actualizar" id="Actualizar" onclick="return confirm('Seguro que desea guardar los cambios?')" /></td>
@@ -124,8 +124,6 @@
                      ?>
                  </td>
              </tr>
-                   </tbody> 
-             </table>
 <br><br>
             <?php
             echo '</br></br><td><button name="Volver" id="volver"><a href="../view/vistaMenuProfesor.php">Volver</a></button></td><br>';
