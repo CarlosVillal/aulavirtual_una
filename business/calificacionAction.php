@@ -4,7 +4,6 @@ include 'calificacionBusiness.php';
 
 if(isset($_POST['Insertar'])){ 
 
- $cal_Id = $_POST['cal_Id'];
  $cal_Examen1 = $_POST['cal_Examen1'];
  $cal_Examen2 = $_POST['cal_Examen2'];
  $cal_Quiz1 = $_POST['cal_Quiz1'];
@@ -14,8 +13,7 @@ if(isset($_POST['Insertar'])){
  $cur_NotaFinal = $_POST['cur_NotaFinal'];
  $cur_est_Id = $_POST['cur_est_Id'];
 
-
- $calificacion = new Calificacion($cal_Id,$cal_Examen1,$cal_Examen2, $cal_Quiz1,$cal_Quiz2,$cal_Proyecto1,$cal_Proyecto2, $cur_NotaFinal, $cur_est_Id);
+ $calificacion = new Calificacion(0,$cal_Examen1,$cal_Examen2, $cal_Quiz1,$cal_Quiz2,$cal_Proyecto1,$cal_Proyecto2, $cur_NotaFinal, $cur_est_Id);
  
  $calificacionBusiness = new CalificacionBusiness();
  $resultado = $calificacionBusiness->insertar($calificacion);
@@ -46,6 +44,9 @@ if(isset($_POST['Eliminar'])){
     }
 }
     
+
+
+
 
 if(isset($_POST['Actualizar'])){
     $cal_Id = $_POST['cal_Id'];

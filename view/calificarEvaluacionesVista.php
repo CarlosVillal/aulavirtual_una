@@ -38,38 +38,11 @@
     foreach ($matricula as $row) {                                
         echo '<option value="'. $row['cur_est_Id'] .'">'. $row['est_Cedula'] .'</option>';                                
     }
+
     
     ?>
-    </select></td>
-    <td><label>Id: </label>
-    <input type="number" id="cal_Id" name="cal_Id" required></td>
-                            
-    <td><label>Examen 1: </label>
-    <input type="number" id="cal_Examen1" name="cal_Examen1" ></td>
-
-    <td><label>Examen 2: </label>
-    <input type="number" id="cal_Examen2" name="cal_Examen2" ></td>
-                                  
-    <td><label>Quiz 1: </label>
-    <input type="number" id="cal_Quiz1" name="cal_Quiz1" ></td>
-
-    <td><label>Quiz 2: </label>
-    <input type="number" id="cal_Quiz2" name="cal_Quiz2" ></td>
-                                        
-    <td><label>Proyecto 1: </label>
-    <input type="number" id="cal_Proyecto1" name="cal_Proyecto1" ></td>
-
-    <td><label>Proyecto 1: </label>
-    <input type="number" id="cal_Proyecto1" name="cal_Proyecto1" ></td>
-
-<td><label>Proyecto 2: </label>
-    <input type="number" id="cal_Proyecto2" name="cal_Proyecto2" ></td>
-
-    <td><label>Nota Final: </label>
-    <input type="number" id="cur_NotaFinal" name="cur_NotaFinal" ></td>
-
-
-  <td><input onclick="return confirm('Seguro que desea almacenar los datos?')" type="submit" value="Registrar" name="Insertar" id="Insertar"/> </td>
+  
+  <td><input onclick="return confirm('Seguro que desea almacenar los datos?')" type="submit" value="Buscar" name="Buscar" id="Buscar"/> </td>
     
 </table>  
 </div>  

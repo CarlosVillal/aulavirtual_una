@@ -20,6 +20,9 @@ if(isset($_POST['Insertar'])){
     }
 
 
+
+    
+
 if(isset($_POST['Eliminar'])){
     if (isset($_POST['cur_est_Id'])){
         $id=$_POST['cur_est_Id'];
