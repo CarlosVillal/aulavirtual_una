@@ -53,6 +53,7 @@
     <th>Proyecto 1</th>
     <th>Proyecto 2</th>
     <th>Nota Final</th>
+    <th>Siglas del curso</th>
     <th>Estudiante matriculado</th>
 </tr>
 </thead>
