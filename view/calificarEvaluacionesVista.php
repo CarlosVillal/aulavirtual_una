@@ -121,9 +121,9 @@
 
           </table>
 
-         <?php
-         echo '</br></br><td><button name="Volver" id="volver"><a href="../">Volver</a></button></td><br>';
-         ?>
+         
+         <button name="Volver"><a href="../view/vistaMenuProfesor.php">Volver</a></button>
+        
 
 
 
