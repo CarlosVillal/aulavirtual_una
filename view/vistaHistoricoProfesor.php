@@ -20,6 +20,20 @@
 </head>
 <body>
 
+<?php
+$cedula = "";
+$tipoUsuario = "";
+    $loginBusiness = new LoginBusiness();
+    $login = $loginBusiness -> getLoginActivo();
+    foreach ($login as $row) {
+        echo '<td><input type="hidden" name="log_act_CedulaUsuario" value="'. $row['log_act_CedulaUsuario'] .'"/></td>';
+        echo '<td><input type="hidden" name="log_act_Contrasenia" value="'. $row['log_act_Contrasenia'] .'"/></td>';
+        echo '<td><input type="hidden" name="log_act_TipoUsuario" value="'. $row['log_act_TipoUsuario'] .'"/></td>';
+        $cedula = $row['log_act_CedulaUsuario'];
+        $tipoUsuario = $row['log_act_TipoUsuario'];
+    }
+?>
+
 <br><br><br>
 <table class="table table-striped table-bordered" >
                   <thead>
@@ -35,7 +49,7 @@
                   <tbody>
                   <?php
     $historicoBusiness = new HistoricoBusiness();
-    $historico = $historicoBusiness -> obtenerHistorico_Profesor("701110234");
+    $historico = $historicoBusiness -> obtenerHistorico_Profesor($cedula);
     foreach ($historico as $row) {
         echo '<form  method="post" enctype="multipart/form-data" action="../business/historicoAction.php">';
         
