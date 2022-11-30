@@ -22,8 +22,8 @@ class CalificacionBusiness{
        return $this->calificacionData->deleteCalificacion($id);
     }
 
-   public function obtenerCalificacionEspecificaDeEstudiante($cal_Id) {
-       return $this->calificacionData->getCalificacionEspecifica($cal_Id);
+   public function obtenerCalificacionEspecificaDeEstudiante() {
+       return $this->calificacionData->getCalificacionEspecifica();
     }
 
   

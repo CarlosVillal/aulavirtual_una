@@ -21,9 +21,9 @@ if(isset($_POST['Insertar'])){
  $resultado = $calificacionBusiness->insertar($calificacion);
  
     if($resultado == 1){
-         Header("Location: ../view/vistaCalificacion.php?success=inserted");
+         Header("Location: ../view/calificarEvaluacionesVista.php?success=inserted");
      }else{
-         Header("Location: ../view/vistaCalificacion.php?error=dbError");
+         Header("Location: ../view/calificarEvaluacionesVista.php?error=dbError");
      }
 
 
@@ -39,9 +39,9 @@ if(isset($_POST['Eliminar'])){
         $result = $calificacionBusiness->delete($id);
         
         if($result == 1){           
-        header("Location: ../view/vistaCalificacion.php?success=deleted");
+        header("Location: ../view/calificarEvaluacionesVista.php?success=deleted");
     }else{       
-        header("Location: ../view/vistaCalificacion.php?error=dbError");
+        header("Location: ../view/calificarEvaluacionesVista.php?error=dbError");
     }
     }
 }
@@ -65,9 +65,9 @@ if(isset($_POST['Actualizar'])){
         $resultado = $calificacionBusiness->update($calificacion);
     
         if($resultado == 1){
-            Header("Location: ../view/vistaCalificacion.php?success=update");
+            Header("Location: ../view/calificarEvaluacionesVista.php?success=update");
         }else{
-            Header("Location: ../view/vistaCalificacion.php?error=dbError");
+            Header("Location: ../view/calificarEvaluacionesVista.php?error=dbError");
         }
     
 

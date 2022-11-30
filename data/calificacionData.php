@@ -14,7 +14,7 @@ class CalificacionData extends Data {
         $cal_Examen1 = $Calificacion->getcal_Examen1();
         $cal_Examen2 = $Calificacion->getcal_Examen2();
         $cal_Quiz1 = $Calificacion->getcal_Quiz1();
-        $cal_Quiz2 = $Calificacion->setcal_Quiz2();
+        $cal_Quiz2 = $Calificacion->getcal_Quiz2();
         $cal_Proyecto1 = $Calificacion->getcal_Proyecto1();
         $cal_Proyecto2 = $Calificacion->getcal_Proyecto2();
         $cur_NotaFinal = $Calificacion->getcur_NotaFinal();
@@ -57,7 +57,7 @@ class CalificacionData extends Data {
         $cal_Examen1 = $Calificacion->getcal_Examen1();
         $cal_Examen2 = $Calificacion->getcal_Examen2();
         $cal_Quiz1 = $Calificacion->getcal_Quiz1();
-        $cal_Quiz2 = $Calificacion->setcal_Quiz2();
+        $cal_Quiz2 = $Calificacion->getcal_Quiz2();
         $cal_Proyecto1 = $Calificacion->getcal_Proyecto1();
         $cal_Proyecto2 = $Calificacion->getcal_Proyecto2();
         $cur_NotaFinal = $Calificacion->getcur_NotaFinal();
@@ -81,11 +81,11 @@ class CalificacionData extends Data {
     }
 
 
-     public function getCalificacionEspecifica($cal_Id){
+     public function getCalificacionEspecifica(){
         $serverName = gethostname();
         $conexion = new PDO("sqlsrv:server=$serverName;database=DB_AulaVirtual_UNA");
 
-        $sql = $conexion->prepare("EXEC sp_ver_calificacion_especifica ?");
+        $sql = $conexion->prepare("EXEC sp_ver_calificacion");
         $sql->bindParam(1, $est_Cedula , PDO::PARAM_STR);
         $sql->execute();
         
