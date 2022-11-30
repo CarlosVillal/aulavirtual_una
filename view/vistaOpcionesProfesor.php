@@ -40,7 +40,7 @@
 </div>
 
 <br/><br/>
-    <button name="Volver" id="volver"><a href="../">Volver</a></button>
+    <button name="Volver" id="volver"><a href="../view/vistaMenuAdministrador.php">Volver</a></button>
 
 </body>
 </html>

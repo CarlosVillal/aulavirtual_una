@@ -58,8 +58,6 @@
     <option value="Omar Dengo">Omar Dengo</option>    
                                
   </select></td>
-
-
   <td><input onclick="return confirm('Seguro que desea almacenar los datos?')" type="submit" value="Registrar" name="Insertar" id="Insertar"/> </td>
   </table>      
   </div>  
@@ -175,7 +173,7 @@
                     echo '<td><input type="text" readonly id="est_Cedula" name="est_Cedula"  value="'. $row['est_Cedula'] . '"/></td>';
                     echo '<td><input type="text" readonly id="cur_Sigla" name="cur_Sigla"  value="'. $row['cur_Sigla'] . '"/></td>';
                                        
-                    ?> 
+                    ?> <input type="hidden" name="ruta" value="../view/vistaestudiante.php" >
                       <td><input type="submit" value="Eliminar" name="Eliminar" id="delete" onclick="return confirm('Seguro que desea eliminar el registro?')" /></td>
                     <?php                           
                     echo '</tr>';
@@ -206,7 +204,7 @@
                    </tbody> 
              </table>
             <?php
-            echo '</br></br><td><button name="Volver" id="volver"><a href="../">Volver</a></button></td><br>';
+            echo '</br></br><td><button name="Volver" id="volver"><a href="../view/vistaMenuAdministrador.php">Volver</a></button></td><br>';
             ?>
 
 </body>

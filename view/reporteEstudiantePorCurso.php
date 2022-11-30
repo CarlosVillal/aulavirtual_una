@@ -53,7 +53,7 @@ include '../business/estudianteBusiness.php';
     </tbody>
 </table> 
 <br><br>
-    <button name="Volver" id="volver"><a href="../">Volver</a></button>
+    <button name="Volver" id="volver"><a href="../view/vistaMenuProfesor.php">Volver</a></button>
            
     
 </body>

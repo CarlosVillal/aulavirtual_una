@@ -20,21 +20,20 @@ if(isset($_POST['Insertar'])){
 
     }
 
-
-
     
 
 if(isset($_POST['Eliminar'])){
     if (isset($_POST['cur_est_Id'])){
         $id=$_POST['cur_est_Id'];
+        $ruta = $_POST['ruta'];
 
         $matriculaBusiness = new MatriculaBusiness();
         $result = $matriculaBusiness->delete($id);
         
         if($result == 1){           
-        header("Location: ../view/vistaestudiante.php?success=deleted");
+        header("Location: $ruta?success=deleted");
     }else{       
-        header("Location: ../view/vistaestudiante.php?error=dbError");
+        header("Location: $ruta?error=dbError");
     }
     }
 }

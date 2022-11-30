@@ -167,7 +167,8 @@ $tipoUsuario = "";
                     echo '<td><input type="text" readonly id="cur_Sigla" name="cur_Sigla"  value="'. $row['cur_Sigla'] . '"/></td>';
                                        
                     ?> 
-                      <td><input type="submit" value="Eliminar" name="Eliminar" id="delete" onclick="return confirm('Seguro que desea eliminar el registro?')" /></td>
+                    <input type="hidden" name="ruta" value="../view/vistaCurso.php" >
+                    <td><input type="submit" value="Eliminar" name="Eliminar" id="delete" onclick="return confirm('Seguro que desea eliminar el registro?')" /></td>
                     <?php                           
                     echo '</tr>';
                     echo '</form>';  

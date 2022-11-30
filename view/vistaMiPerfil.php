@@ -1,5 +1,6 @@
 <?php 
   include '../business/estudianteBusiness.php'; 
+  include '../business/loginBusiness.php';
   include_once '../data/data.php';
   Data::Conexion();
 ?>
@@ -20,25 +21,37 @@
     <title>Perfil Estudiante</title>
 </head>
 <body> 
+<?php
+  $cedula = "";
+  $tipoUsuario = "";
+    $loginBusiness = new LoginBusiness();
+    $login = $loginBusiness -> getLoginActivo();
+    foreach ($login as $row) {
+        echo '<td><input type="hidden" name="log_act_CedulaUsuario" value="'. $row['log_act_CedulaUsuario'] .'"/></td>';
+        echo '<td><input type="hidden" name="log_act_TipoUsuario" value="'. $row['log_act_TipoUsuario'] .'"/></td>';
+        $cedula = $row['log_act_CedulaUsuario'];
+        $tipoUsuario = $row['log_act_TipoUsuario'];
+    }
+    ?>
 
 <table class="table table-striped table-bordered" >
                   <thead>
-                  <h1>Perfil Estudiante</h1>
+                  <h1>Mi Perfil</h1>
                     <tr>
                     <th>Cédula</th>
-                      <th>Nombre</th>  
-                      <th>Primer apellido</th>                   
-                      <th>Sengundo apellido</th> 
-                      <th>Fecha de Nacimiento</th>
-                      <th>Dirección</th>
-                      <th>Carrera</th>    
-                      <th>Tipo de beca</th>                                    
+                    <th>Nombre</th>  
+                    <th>Primer apellido</th>                   
+                    <th>Sengundo apellido</th> 
+                    <th>Fecha de Nacimiento</th>
+                    <th>Dirección</th>
+                    <th>Carrera</th>    
+                    <th>Tipo de beca</th>                                    
                     </tr>
                   </thead>
                   <tbody>
                   <?php
                    $estudianteBusiness = new EstudianteBusiness();
-                  $estudiante = $estudianteBusiness->obtenerEstudianteEspecifico("702540125");
+                  $estudiante = $estudianteBusiness->obtenerEstudianteEspecifico($cedula);
                    foreach ($estudiante as $row) {
 
                     echo '<form  method="post" enctype="multipart/form-data" action="../business/estudianteAction.php">';
@@ -149,9 +162,9 @@
                    </tbody> 
              </table>
 
-            <?php
-            echo '</br></br><td><button name="Volver" id="volver"><a href="../view/vistaMenuEstudiante.php">Volver</a></button></td><br>';
-            ?>
+<br/><br/>
+<button><a href="../view/vistaMenuEstudiante.php">Volver</a></button>
+
 
 </body>
 </html>

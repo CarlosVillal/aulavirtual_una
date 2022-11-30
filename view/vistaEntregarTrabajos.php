@@ -12,6 +12,7 @@
 
 <head>
 </body>
+<br>
 <form action="subearchivo.php" method="post" enctype="multipart/form-data">
     <b>Nombre de trabajo:</b> 
     <br>
@@ -26,5 +27,8 @@
     <input type="submit" value="Enviar Trabajo">
 </form>
 </head>
+
+<br/><br/>
+    <button><a href="../view/vistaMenuEstudiante.php">Volver</a></button>
 </body>
 </html>

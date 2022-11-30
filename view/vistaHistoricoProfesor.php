@@ -86,7 +86,7 @@
              </table>
 
             <?php
-            echo '</br></br><td><button name="Volver" id="volver"><a href="../">Volver</a></button></td><br>';
+            echo '</br></br><td><button name="Volver" id="volver"><a href="../view/vistaMenuProfesor.php">Volver</a></button></td><br>';
             ?>
 
 
