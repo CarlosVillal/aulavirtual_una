@@ -107,7 +107,7 @@ $tipoUsuario = "";
         echo '<td><input type="text" name="car_Id" value="'. $row['car_Id'].'"/></td>';
         echo '<td><input type="text" name="pro_Cedula" value="'. $row['pro_Cedula'].'"/></td>';
         
-       echo '<input type="hidden" name="cedulaActiva" value="'. $cedula .'">';
+       echo '<input type="hidden" name="cedulaActiva" value="'.$cedula.'">';
        ?> <td><input type="submit" value="Actualizar" name="Actualizar" id="Actualizar" onclick="return confirm('Seguro que desea guardar los cambios?')" />
         <input type="submit" value="Eliminar" name="Eliminar" id="Eliminar" onclick="return confirm('Seguro que desea eliminar el registro?')" /></td>
         <?php } ?>
@@ -173,25 +173,25 @@ $tipoUsuario = "";
                     echo '</tr>';
                     echo '</form>';  
                   }                                      
-                   ?>
-                   <tr>
-                 <td></td>
-                 <td>
+                    ?>
+                    <tr>
+                  <td></td>
+                  <td>
                    
-                     <?php
-                     if (isset($_GET['error'])) {
-                         if ($_GET['error'] == "emptyField") {
-                             echo '<p style="color: red">Campo(s) vacio(s)</p>';
+                      <?php
+                //      if (isset($_GET['error'])) {
+                //          if ($_GET['error'] == "emptyField") {
+                //              echo '<p style="color: red">Campo(s) vacio(s)</p>';
                              
-                         } else if ($_GET['error'] == "dbError") {
-                             echo '<center><p style="color: red">Error al procesar la transacción</p></center>';
+                //          } else if ($_GET['error'] == "dbError") {
+                //              echo '<center><p style="color: red">Error al procesar la transacción</p></center>';
                              
-                         }
-                     } else if (isset($_GET['success'])) {
-                         echo '<p style="color: green">Transacción realizada</p>';
-                         echo '<br>';                         
+                //          }
+                //      } else if (isset($_GET['success'])) {
+                //          echo '<p style="color: green">Transacción realizada</p>';
+                //          echo '<br>';                         
                         
-                     }
+                //      }
                      ?>
                  </td>
              </tr>

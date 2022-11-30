@@ -1,5 +1,6 @@
 <?php 
   include '../business/historicoBusiness.php'; 
+  include '../business/loginBusiness.php';
   include_once '../data/data.php';
   Data::Conexion();
 ?>

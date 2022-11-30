@@ -38,13 +38,9 @@
 <table class="table table-striped table-bordered" >
                   <thead>
                     <tr>
-                    <th>Siglas</th>
-                    <th>Nombre de curso</th>
-                    <th>Numero de cupos</th>
-                    <th>Vigencia</th>
-                    <th>Nota Final</th>
-                    <th>Carrera</th>
-                    <th>Estudiante</th>                              
+                    <th>Siglas del Curso</th>
+                    <th>Cedula de Estudiante</th>
+                    <th>Nota Final</th>                             
                     </tr>
                   </thead>
                   <tbody>
@@ -55,14 +51,9 @@
         echo '<form  method="post" enctype="multipart/form-data" action="../business/historicoAction.php">';
         
         echo '<tr>';
-        echo '<td><input type="text" readonly name="his_Sigla" value="'. $row['his_Sigla'].'"/></td>';
-        echo '<td><input type="text" name="his_Nombre" value="'. $row['his_Nombre'].'"/></td>';
-        echo '<td><input type="text" name="his_CantidadEstudiantes" value="'. $row['his_CantidadEstudiantes'].'"/></td>';
-        echo '<td><input type="text" name="his_Vigencia" value="'. $row['his_Vigencia'].'"/></td>';
-        echo '<td><input type="text" name="his_Nota" value="'. $row['his_Nota'].'"/></td>';
-        echo '<td><input type="text" name="car_Id" value="'. $row['car_Id'].'"/></td>';
-        echo '<td><input type="text" name="est_Cedula" value="'. $row['est_Cedula'].'"/></td>';
-                            
+        echo '<td><input type="text" readonly name="cur_Sigla" value="'. $row['cur_Sigla'].'"/></td>';
+        echo '<td><input type="text" readonly name="est_Cedula" value="'. $row['est_Cedula'].'"/></td>';   
+        echo '<td><input type="text" readonly name="nota" value="'. $row['nota'].'"/></td>';                   
     echo '</tr>';
     echo '</form>';    
 }                                      

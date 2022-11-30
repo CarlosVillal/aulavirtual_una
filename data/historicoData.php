@@ -71,7 +71,7 @@ class HistoricoData extends Data {
         $serverName = gethostname();
         $conexion = new PDO("sqlsrv:server=$serverName;database=DB_AulaVirtual_UNA");
 
-        $sql = $conexion->prepare("EXEC sp_ver_historicos_estudiantes ?");
+        $sql = $conexion->prepare("EXEC sp_ver_historico_estu ?");
         $sql->bindParam(1, $est_Cedula , PDO::PARAM_STR);
         $sql->execute();
         
